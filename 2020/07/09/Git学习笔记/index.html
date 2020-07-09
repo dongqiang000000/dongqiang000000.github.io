@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="学习内容">
+  <meta name="description" content="##Git的基础配置和命令###1.配置SSHcat ~&#x2F;.ssh&#x2F;id_rsa.pub查看SSHssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;生成SSH。（输入后按3次回车）将得到的SSH复制到GitHub。###2.git clone在你第一次使用git的时候，git会提示进行全局变量设置：git config -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git学习">
 <meta property="og:url" content="http://yoursite.com/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="优秀的人">
-<meta property="og:description" content="学习内容">
+<meta property="og:description" content="##Git的基础配置和命令###1.配置SSHcat ~&#x2F;.ssh&#x2F;id_rsa.pub查看SSHssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;生成SSH。（输入后按3次回车）将得到的SSH复制到GitHub。###2.git clone在你第一次使用git的时候，git会提示进行全局变量设置：git config -">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-09T08:40:54.000Z">
-<meta property="article:modified_time" content="2020-07-09T10:59:25.541Z">
+<meta property="article:modified_time" content="2020-07-09T12:47:58.675Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -174,7 +174,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-09 16:40:54 / Modified: 18:59:25" itemprop="dateCreated datePublished" datetime="2020-07-09T16:40:54+08:00">2020-07-09</time>
+              <time title="Created: 2020-07-09 16:40:54 / Modified: 20:47:58" itemprop="dateCreated datePublished" datetime="2020-07-09T16:40:54+08:00">2020-07-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -197,7 +197,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>学习内容</p>
+        <p>##Git的基础配置和命令<br>###1.配置SSH<br><code>cat ~/.ssh/id_rsa.pub</code>查看SSH<br><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code>生成SSH。（输入后按3次回车）<br>将得到的SSH复制到GitHub。<br>###2.git clone<br><strong>在你第一次使用git的时候，git会提示进行全局变量设置：</strong><br><code>git config --global user.name &quot;叶冰&quot;</code>告诉git名字<br><code>git config --global user.email &quot;hhdd576@126.com&quot;</code>告诉git邮箱<br><strong>注：这个配置只需进行一次。</strong>  </p>
+<p><strong>常见的一些Linux命令：</strong><br><code>ls</code>查看当前目录下文件<br><code>ls -a</code>查看当前目录下文件(包括隐藏文件)<br><code>touch 文件</code>在当前目录下创建文件<br><code>mkdir 文件夹</code>在当前目录下创建文件夹<br><code>cd 文件目录</code>进入某个文件夹（直接cd，返回根目录）<br><code>rm -rf 文件</code>删除当前目录下是指定文件（慎用）<br>###3.Git提交（三步）<br>(1)git add<br><code>git add -A</code><br>(2)git commit<br><code>git commit -m &quot;本次提交的修改的备注&quot;</code><br><strong>注：没有创建文件提交时可合并(1)(2)为：<code>git commit -m &quot;本次提交的修改的备注&quot;</code>。</strong><br>(3)git push<br>第一次提交到本分支：<code>git push origin master</code><br><strong>注：绑定多个仓库时，origin要替换为相应的仓库名；当在其它分支进行提交时，master要替换为相应分支名</strong>。<br>第2~n次提交到本分支:<code>git push</code><br><strong>注：提交时，需要本地仓库和远程仓库其中一个是另一个的真子集才可以提交，所以提交前要养成先用 <code>git pull</code>抓取远程仓库内容的习惯（多人开发）。</strong><br>###4绑定本地仓库到GitHub<br>(1)在github创建一个同名空仓库<br>(2)绑定远程仓库<br><code>git init</code>//将文件夹初始化为git仓库<br><code>git remote -v</code>//查看当前的git仓库绑定的远程仓库<br><code>git remote add origin 仓库地址</code>//绑定远程仓库<br><code>git remote remove origin</code>//移除绑定  </p>
 
     </div>
 
