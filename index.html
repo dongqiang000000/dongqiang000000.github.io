@@ -147,6 +147,157 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E6%8E%A5%E5%8F%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="name" content="优秀的人">
+      <meta itemprop="description" content="日常学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="优秀">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/17/%E6%8E%A5%E5%8F%A3/" class="post-title-link" itemprop="url">接口</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-17 21:40:36 / Modified: 22:29:50" itemprop="dateCreated datePublished" datetime="2020-07-17T21:40:36+08:00">2020-07-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">java学习笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="接口的语法"><a href="#接口的语法" class="headerlink" title="接口的语法"></a>接口的语法</h2><p>  public interface LoginService{<br>  String getLogin();<br>  }<br><strong>注：接口的方法默认不需要方法体（大括号就不需要啦）</strong>  </p>
+<p>UML接口的定义：<br><img src="https://style.youkeda.com/img/ham/course/j2/RoleService.svg" alt=""><br>如上图，这个图标指的就是接口（interface）：<br><img src="https://style.youkeda.com/img/ham/course/j2/interface.png" alt=""></p>
+<h2 id="接口实现类"><a href="#接口实现类" class="headerlink" title="接口实现类"></a>接口实现类</h2><p><img src="https://style.youkeda.com/img/ham/course/j2/implements.svg" alt=""><br><strong>注：1.接口定义的方法在实现类里必须要全部实现了，而且方法签名要一模一样（同样的方法名称、方法参数、方法返回值）<br>2.由于接口定义的方法都是 public 的，所以实现类的方法控制修饰符也必须是public</strong>  </p>
+<h3 id="一个类实现多个接口"><a href="#一个类实现多个接口" class="headerlink" title="一个类实现多个接口"></a>一个类实现多个接口</h3><pre><code>package com.youkeda.service.impl;
+
+import com.youkeda.service.RoleService;
+import com.youkeda.service.EchoService;
+
+public class RoleServiceImpl 
+ implements RoleService,EchoService{
+
+public void addRole(Role role){
+
+}
+
+public ArrayList&lt;Role&gt; getRoles(){
+return null;
+}
+
+public void echo(){
+
+}
+
+}</code></pre><h3 id="实例化接口"><a href="#实例化接口" class="headerlink" title="实例化接口"></a>实例化接口</h3><p>接口是不能单独实例化的，因为接口只是定义，没有具体的实现是不允许实例化的。<br>所以 <code>EchoService echo = new EchoService();</code> 这个语法是错误的<br>正确的实例化是结合实现类的：  </p>
+<pre><code>package com.youkeda.test;
+
+import com.youkeda.service.RoleService;
+import com.youkeda.service.impl.RoleServiceImpl;
+
+/**
+ * RoleServiceTest
+ */
+public class RoleServiceTest {
+
+  public static void main(String[] args) {
+
+RoleService roleService = new RoleServiceImpl();
+
+
+  }
+}</code></pre><p>由于 RoleServiceImpl 类同时实现了 EchoService，所以实例也可以被转化为 EchoService。  </p>
+<pre><code>package com.youkeda.test;
+
+import com.youkeda.service.RoleService;
+import com.youkeda.service.impl.RoleServiceImpl;
+
+/**
+ * RoleServiceTest
+ */
+public class RoleServiceTest {
+
+  public static void main(String[] args) {
+
+RoleService roleService = new RoleServiceImpl();
+
+// 类型转化：把 roleService 实例转化为 EchoService 接口类型
+EchoService echoService = (EchoService)roleService;
+
+  }
+}</code></pre><h3 id="UML接口实现图"><a href="#UML接口实现图" class="headerlink" title="UML接口实现图"></a>UML接口实现图</h3><p><img src="https://style.youkeda.com/img/ham/course/j2/RoleService1.svg" alt=""><br>如上图，代表着 RoleServiceImpl 实现了 RoleService 接口<br><strong>注：补充说明一点：一般实现类的包名在 service 包下并且命名为 impl，同样实现类的命名规则是 XxxServiceImpl,也就是后缀是 <code>ServiceImpl</code>,如我们这个<code>com.youkeda.service.impl.RoleServiceImpl</code>实现类</strong></p>
+<h2 id="java常用接口"><a href="#java常用接口" class="headerlink" title="java常用接口"></a>java常用接口</h2><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p><img src="https://style.youkeda.com/img/ham/course/j2/java-map1.png" alt=""><br>如上图，Map（映射）是遵循 key:value 这样的形式的集合。key、value 的类型可以是任何的 Java 对象。  </p>
+<p>我们大部分的情况下，都会使用 HashMap 这个 Map 的实现类。所以如果想得到一个 Map 的实例的话可以使用 HashMap</p>
+<pre><code>import java.util.Map;
+import java.util.HashMap;
+
+// key value 得是 Java 类型
+Map&lt;key,value&gt; map = new HashMap&lt;&gt;();  </code></pre><p><code>map.put(key,value)</code>//数据存储<br> <code>map.get(key)</code>//获取数据<br><code>map.size()</code>//获得map尺寸</p>
+<p>map遍历：  </p>
+<pre><code>for (Map.Entry&lt;Integer,String&gt; entry : map.entrySet()){ 
+
+  System.out.println(&quot;Key = &quot; + entry.getKey() + 
+ &quot;, Value = &quot; + entry.getValue());
+}</code></pre><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List是 ArrayList 的接口，所以用法和 ArrayList 没有太大差别，支持同一类型数据的集合存储  </p>
+<p>比如说存储字符串集合：<code>List&lt;String&gt; strings = new ArrayList&lt;&gt;();</code><br>因为 List 和 ArrayList 运用是相同的，我们就不多讲了。额外介绍一下另外一种遍历方式:</p>
+<pre><code>List&lt;String&gt; strings = new ArrayList&lt;&gt;();
+
+for(String str : strings){
+System.out.println(str);
+}  </code></pre><p>这个for循环语法适用于不关心数组坐标值的场景，简化版的for语句  </p>
+<p><strong>注：请大家注意一下，在面向对象的设计中，我们一般都采用 Map、List 作为集合数据的类型，因为这个符合接口开发的规范，我们习惯如此</strong>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E7%BB%A7%E6%89%BF%E5%92%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,7 +323,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-17 21:07:47 / Modified: 21:36:18" itemprop="dateCreated datePublished" datetime="2020-07-17T21:07:47+08:00">2020-07-17</time>
+              <time title="Created: 2020-07-17 21:07:47 / Modified: 22:29:50" itemprop="dateCreated datePublished" datetime="2020-07-17T21:07:47+08:00">2020-07-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -181,6 +332,10 @@
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">java学习笔记</span></a>
                 </span>
             </span>
 
@@ -331,7 +486,7 @@ this.packageName = packageName;
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-17 20:17:13 / Modified: 20:56:14" itemprop="dateCreated datePublished" datetime="2020-07-17T20:17:13+08:00">2020-07-17</time>
+              <time title="Created: 2020-07-17 20:17:13 / Modified: 22:29:50" itemprop="dateCreated datePublished" datetime="2020-07-17T20:17:13+08:00">2020-07-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -340,6 +495,10 @@ this.packageName = packageName;
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">java学习笔记</span></a>
                 </span>
             </span>
 
@@ -776,14 +935,14 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
