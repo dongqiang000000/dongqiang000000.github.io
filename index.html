@@ -147,6 +147,165 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E7%BB%A7%E6%89%BF%E5%92%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="name" content="优秀的人">
+      <meta itemprop="description" content="日常学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="优秀">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/17/%E7%BB%A7%E6%89%BF%E5%92%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="post-title-link" itemprop="url">继承和修饰符</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-17 21:07:47 / Modified: 21:36:18" itemprop="dateCreated datePublished" datetime="2020-07-17T21:07:47+08:00">2020-07-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="继承语法"><a href="#继承语法" class="headerlink" title="继承语法"></a>继承语法</h2><p>Animal.java  </p>
+<pre><code>package com.youkeda.model;  
+
+public class Animal {
+
+private String name;
+
+private int age;
+
+public void eat(){
+    System.out.println(&quot;动物爱吃东西&quot;);
+}
+
+public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+
+public int getAge() {
+    return age;
+}
+
+public void setAge(int age) {
+    this.age = age;
+}
+}  </code></pre><p>Dog.java</p>
+<pre><code>package com.youkeda.model;
+
+public class Dog extends Animal{
+
+}</code></pre><h2 id="方法覆盖"><a href="#方法覆盖" class="headerlink" title="方法覆盖"></a>方法覆盖</h2><p>Dog.java</p>
+<pre><code>package com.youkeda.model;
+
+public class Dog extends Animal{
+
+public void eat(){
+System.out.println(&quot;狗狗喜欢吃肉骨头&quot;);
+}
+
+}  </code></pre><p>实例化Dog对象：Dog d1 = new Dog();<br>实例化Animal对象：Animal d2 = new Dog();<br>d2.eat();//调用的是Dog的eat()方法<br><strong>注：子类的对象是可以转化为父类对象，但是父类不能转化为子类。也就是说 <code>Dog dog = new Animal()</code>是错误的</strong></p>
+<h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><p>父类</p>
+<pre><code>public class CustomFile{  
+  // 存储文件路径的变量  
+  public String filePath;  
+  // 存储文件后缀变量，通过后缀来区分文件类型  
+  public String ext;  
+
+  // 声明一个构造函数，接受文件路径
+  public CustomFile(String filePath){
+//给类变量 filePath 赋值
+//this代表的是当前类的实例
+this.filePath = filePath;
+  }
+
+  /**
+   * 获取文件名称
+   */
+  public String getName(){
+// 比如文件路径是 /Users/mac/work/face.png
+// 把文件路径分隔成数组（分隔符是 / ）
+// 数组的最后一位就是文件名
+String[] paths = filePath.split(&quot;/&quot;);
+// 数组的最后一位需要减1，因为数组是从索引0开始的。
+return  paths[paths.length-1];
+  }
+}</code></pre><p><strong>注：当父类只有一个有参数的构造函数的时候，子类也必须要具备这个构造函数，或者调用 super 方法来实现新的构造函数</strong>。<br>子类一:直接继承  </p>
+<pre><code>public class JavaFile extends CustomFile{
+
+  // 声明一个构造函数
+  public JavaFile(String filePath){
+super(filePath);
+  }
+
+}</code></pre><p>子类二：重新构造</p>
+<pre><code>public class JavaFile extends CustomFile{
+
+  private String packageName;
+
+  // 声明一个构造函数
+  public JavaFile(String filePath,String packageName){
+super(filePath);
+this.packageName = packageName;
+  }
+
+  public String getPackageName(){
+  return this.packageName;
+  }
+
+}</code></pre><p><strong>注：有一点需要注意的是在构造函数里的 super 方法必须写在第一行哦</strong>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -617,7 +776,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
