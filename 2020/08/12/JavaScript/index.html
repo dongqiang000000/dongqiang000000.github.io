@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="基础数据类型变量let定义变量 const定义变量 let和const差别差别一：let定义的变量可以被多次重新赋值const定义的变量只能赋值一次   let name &#x3D; &amp;apos;Bob&amp;apos;; console.log(name); &#x2F;&#x2F; Bob name &#x3D; &amp;apos;Tom&amp;apos;; console.log(name); &#x2F;&#x2F; Tom    const name &#x3D; &amp;ap">
+  <meta name="description" content="变量定义let定义变量 const定义变量 let和const差别差别一：let定义的变量可以被多次重新赋值const定义的变量只能赋值一次   let name &#x3D; &amp;apos;Bob&amp;apos;; console.log(name); &#x2F;&#x2F; Bob name &#x3D; &amp;apos;Tom&amp;apos;; console.log(name); &#x2F;&#x2F; Tom    const name &#x3D; &amp;apos;B">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript">
+<meta property="og:title" content="JavaScript基础数据操作">
 <meta property="og:url" content="http://yoursite.com/2020/08/12/JavaScript/index.html">
 <meta property="og:site_name" content="优秀">
-<meta property="og:description" content="基础数据类型变量let定义变量 const定义变量 let和const差别差别一：let定义的变量可以被多次重新赋值const定义的变量只能赋值一次   let name &#x3D; &amp;apos;Bob&amp;apos;; console.log(name); &#x2F;&#x2F; Bob name &#x3D; &amp;apos;Tom&amp;apos;; console.log(name); &#x2F;&#x2F; Tom    const name &#x3D; &amp;ap">
+<meta property="og:description" content="变量定义let定义变量 const定义变量 let和const差别差别一：let定义的变量可以被多次重新赋值const定义的变量只能赋值一次   let name &#x3D; &amp;apos;Bob&amp;apos;; console.log(name); &#x2F;&#x2F; Bob name &#x3D; &amp;apos;Tom&amp;apos;; console.log(name); &#x2F;&#x2F; Tom    const name &#x3D; &amp;apos;B">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png">
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/const.png">
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%85%AB%E8%BF%9B%E5%88%B6.png">
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6.png">
 <meta property="article:published_time" content="2020-08-12T02:19:12.000Z">
-<meta property="article:modified_time" content="2020-08-12T05:45:53.100Z">
+<meta property="article:modified_time" content="2020-08-12T06:02:44.212Z">
 <meta property="article:author" content="优秀的人">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>JavaScript | 优秀</title>
+  <title>JavaScript基础数据操作 | 优秀</title>
   
 
 
@@ -168,7 +168,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript
+          JavaScript基础数据操作
         </h1>
 
         <div class="post-meta">
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-08-12 10:19:12 / Modified: 13:45:53" itemprop="dateCreated datePublished" datetime="2020-08-12T10:19:12+08:00">2020-08-12</time>
+              <time title="Created: 2020-08-12 10:19:12 / Modified: 14:02:44" itemprop="dateCreated datePublished" datetime="2020-08-12T10:19:12+08:00">2020-08-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -188,6 +188,10 @@
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">JavaScript学习笔记</span></a>
                 </span>
             </span>
 
@@ -202,9 +206,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="let定义变量"><a href="#let定义变量" class="headerlink" title="let定义变量"></a>let定义变量</h4><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png" alt=""></p>
-<h4 id="const定义变量"><a href="#const定义变量" class="headerlink" title="const定义变量"></a>const定义变量</h4><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/const.png" alt=""></p>
-<h4 id="let和const差别"><a href="#let和const差别" class="headerlink" title="let和const差别"></a>let和const差别</h4><p>差别一：let定义的变量可以被多次重新赋值<br>const定义的变量只能赋值一次  </p>
+        <h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><h3 id="let定义变量"><a href="#let定义变量" class="headerlink" title="let定义变量"></a>let定义变量</h3><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png" alt=""></p>
+<h3 id="const定义变量"><a href="#const定义变量" class="headerlink" title="const定义变量"></a>const定义变量</h3><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/const.png" alt=""></p>
+<h3 id="let和const差别"><a href="#let和const差别" class="headerlink" title="let和const差别"></a>let和const差别</h3><p>差别一：let定义的变量可以被多次重新赋值<br>const定义的变量只能赋值一次  </p>
 <pre><code>let name = &apos;Bob&apos;;
 console.log(name); // Bob
 name = &apos;Tom&apos;;
@@ -371,7 +375,7 @@ console.log(number1 === number2); // false</code></pre><p><strong><em>注：由�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础数据类型"><span class="nav-number">1.</span> <span class="nav-text">基础数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let定义变量"><span class="nav-number">1.1.1.</span> <span class="nav-text">let定义变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const定义变量"><span class="nav-number">1.1.2.</span> <span class="nav-text">const定义变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#let和const差别"><span class="nav-number">1.1.3.</span> <span class="nav-text">let和const差别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值类型（主要包括：整数-浮点数和NaN非数值）"><span class="nav-number">2.</span> <span class="nav-text">数值类型（主要包括：整数,浮点数和NaN非数值）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数"><span class="nav-number">2.1.</span> <span class="nav-text">整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#八进制"><span class="nav-number">2.1.1.</span> <span class="nav-text">八进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#十六进制"><span class="nav-number">2.1.2.</span> <span class="nav-text">十六进制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">2.3.</span> <span class="nav-text">NaN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换-字符串模板"><span class="nav-number">3.</span> <span class="nav-text">类型转换&#x2F;字符串模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换"><span class="nav-number">3.1.1.</span> <span class="nav-text">隐式转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制类型转换"><span class="nav-number">3.1.2.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">3.2.</span> <span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拼接"><span class="nav-number">3.2.1.</span> <span class="nav-text">字符串拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义符（-）的使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">转义符（\）的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串中使用三元表达式"><span class="nav-number">3.2.3.</span> <span class="nav-text">模版字符串中使用三元表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符（相等-全等）"><span class="nav-number">3.3.</span> <span class="nav-text">运算符（相等&#x2F;全等）</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量定义"><span class="nav-number">1.</span> <span class="nav-text">变量定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let定义变量"><span class="nav-number">1.1.</span> <span class="nav-text">let定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const定义变量"><span class="nav-number">1.2.</span> <span class="nav-text">const定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const差别"><span class="nav-number">1.3.</span> <span class="nav-text">let和const差别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值类型（主要包括：整数-浮点数和NaN非数值）"><span class="nav-number">2.</span> <span class="nav-text">数值类型（主要包括：整数,浮点数和NaN非数值）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数"><span class="nav-number">2.1.</span> <span class="nav-text">整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#八进制"><span class="nav-number">2.1.1.</span> <span class="nav-text">八进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#十六进制"><span class="nav-number">2.1.2.</span> <span class="nav-text">十六进制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">2.3.</span> <span class="nav-text">NaN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换-字符串模板"><span class="nav-number">3.</span> <span class="nav-text">类型转换&#x2F;字符串模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换"><span class="nav-number">3.1.1.</span> <span class="nav-text">隐式转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制类型转换"><span class="nav-number">3.1.2.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">3.2.</span> <span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拼接"><span class="nav-number">3.2.1.</span> <span class="nav-text">字符串拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义符（-）的使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">转义符（\）的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串中使用三元表达式"><span class="nav-number">3.2.3.</span> <span class="nav-text">模版字符串中使用三元表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符（相等-全等）"><span class="nav-number">3.3.</span> <span class="nav-text">运算符（相等&#x2F;全等）</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -393,7 +397,7 @@ console.log(number1 === number2); // false</code></pre><p><strong><em>注：由�
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
