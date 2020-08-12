@@ -23,7 +23,7 @@
   <meta name="description" content="变量定义let定义变量 const定义变量 let和const差别差别一：let定义的变量可以被多次重新赋值const定义的变量只能赋值一次   let name &#x3D; &amp;apos;Bob&amp;apos;; console.log(name); &#x2F;&#x2F; Bob name &#x3D; &amp;apos;Tom&amp;apos;; console.log(name); &#x2F;&#x2F; Tom    const name &#x3D; &amp;apos;B">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript基础数据操作">
-<meta property="og:url" content="http://yoursite.com/2020/08/12/JavaScript/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="优秀">
 <meta property="og:description" content="变量定义let定义变量 const定义变量 let和const差别差别一：let定义的变量可以被多次重新赋值const定义的变量只能赋值一次   let name &#x3D; &amp;apos;Bob&amp;apos;; console.log(name); &#x2F;&#x2F; Bob name &#x3D; &amp;apos;Tom&amp;apos;; console.log(name); &#x2F;&#x2F; Tom    const name &#x3D; &amp;apos;B">
 <meta property="og:locale" content="en_US">
@@ -32,12 +32,12 @@
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%85%AB%E8%BF%9B%E5%88%B6.png">
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6.png">
 <meta property="article:published_time" content="2020-08-12T02:19:12.000Z">
-<meta property="article:modified_time" content="2020-08-12T06:06:55.243Z">
+<meta property="article:modified_time" content="2020-08-12T07:19:07.450Z">
 <meta property="article:author" content="优秀的人">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/08/12/JavaScript/">
+<link rel="canonical" href="http://yoursite.com/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/">
 
 
 <script id="page-configurations">
@@ -155,7 +155,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/JavaScript/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/m.jpg">
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-08-12 10:19:12 / Modified: 14:06:55" itemprop="dateCreated datePublished" datetime="2020-08-12T10:19:12+08:00">2020-08-12</time>
+              <time title="Created: 2020-08-12 10:19:12 / Modified: 15:19:07" itemprop="dateCreated datePublished" datetime="2020-08-12T10:19:12+08:00">2020-08-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -298,6 +298,53 @@ console.log(number1 == number2); // true</code></pre><p>全等（===）代码：
 <pre><code>let number1 = &apos;45&apos;;
 let number2 = 45;
 console.log(number1 === number2); // false</code></pre><p><strong><em>注：由于相等错在类型转换问题,为了保持代码中数据类型的完整性,推荐使用全等</em></strong></p>
+<h2 id="数组操作（增-删-改-查）"><a href="#数组操作（增-删-改-查）" class="headerlink" title="数组操作（增/删/改/查）"></a>数组操作（增/删/改/查）</h2><h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><h4 id="push方法（从尾加）"><a href="#push方法（从尾加）" class="headerlink" title="push方法（从尾加）"></a>push方法（从尾加）</h4><p>使用方法：<br><code>变量名.push(&#39;要添加的值&#39;);</code><br>例如：  </p>
+<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
+// 在末尾添加“河海大学”
+schools.push(&apos;河海大学&apos;);
+console.log(schools); // 清华大学&apos;,&apos;北京大学&apos;,&apos;浙江大学&apos;,&apos;同济大学&apos;,&apos;河海大学&apos;</code></pre><p>要添加多个值可以合并写，例如：  </p>
+<pre><code>chools.push(&apos;河海大学&apos;);
+schools.push(&apos;大连理工大学&apos;);
+schools.push(&apos;哈尔滨工业大学&apos;);
+
+// 上述三步操作可以一次性完成
+schools.push(&apos;河海大学&apos;, &apos;大连理工大学&apos;, &apos;哈尔滨工业大学&apos;);</code></pre><h4 id="unshift方法（从头加）"><a href="#unshift方法（从头加）" class="headerlink" title="unshift方法（从头加）"></a>unshift方法（从头加）</h4><p>和push方法用法一样</p>
+<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><h4 id="pop方法（从后往前删除）"><a href="#pop方法（从后往前删除）" class="headerlink" title="pop方法（从后往前删除）"></a>pop方法（从后往前删除）</h4><p><code>pop</code>方法对应的是<code>push</code>方法,表示从后往前删除,例如：  </p>
+<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
+
+// 在末尾添加“河海大学”
+schools.push(&apos;河海大学&apos;);
+console.log(schools); // 清华大学&apos;,&apos;北京大学&apos;,&apos;浙江大学&apos;,&apos;同济大学&apos;,&apos;河海大学&apos;
+
+// 从末尾删除一个元素
+schools.pop();
+console.log(schools); // 清华大学&apos;,&apos;北京大学&apos;,&apos;浙江大学&apos;,&apos;同济大学&apos;</code></pre><h4 id="shift方法（从前往后删除）"><a href="#shift方法（从前往后删除）" class="headerlink" title="shift方法（从前往后删除）"></a>shift方法（从前往后删除）</h4><p>和pop方法用法一样</p>
+<h3 id="改（可实现增加和删除）"><a href="#改（可实现增加和删除）" class="headerlink" title="改（可实现增加和删除）"></a>改（可实现增加和删除）</h3><h4 id="splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除"><a href="#splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除" class="headerlink" title="splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除"></a>splice方法（修改指定位置元素）<em>可以实现指定位置元素的增加、删除</em></h4><p><code>变量名.splice(参数一，参数二，参数三);</code><br>splice 方法难理解一点,splice方法括号里需要添加三个值(也叫参数).分别代表三个意思,先来解释一下这三个值：<br>1.参数一,整数类型,表示起始位置<br>2.参数二（<strong>可省略</strong>）,整数类型,表示步长(往后选几个元素,1 代表往后选 1 个元素)<br>3.参数三（<strong>可省略</strong>）,要替换的数组的值  </p>
+<h4 id="一个参数"><a href="#一个参数" class="headerlink" title="一个参数"></a>一个参数</h4><p>表示删除从指定位置开始到结束位置的所有元素,并返回被删除的元素  </p>
+<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
+// 删除从下标为1的位置到结束位置的值
+let deleteSchools = schools.splice(1);
+// 删除之后，原数组中的剩余内容
+console.log(schools); // [&quot;清华大学&quot;]
+// 删除的内容
+console.log(deleteSchools); // [&quot;北京大学&quot;, &quot;浙江大学&quot;, &quot;同济大学&quot;]</code></pre><h4 id="两个参数"><a href="#两个参数" class="headerlink" title="两个参数"></a>两个参数</h4><p>表示删除从参数一位置开始，往后走参数二步的所有元素,并返回被删除的元素  </p>
+<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
+// 从下标为0开始,往后数两个元素,删除
+let deleteSchools = schools.splice(0, 2);
+console.log(schools); // [&apos;浙江大学&apos;, &apos;同济大学&apos;]
+onsole.log(deleteSchools); // [&apos;清华大学&apos;, &apos;北京大学&apos;]</code></pre><h4 id="三个参数"><a href="#三个参数" class="headerlink" title="三个参数"></a>三个参数</h4><p>案例1：实现增加（参数二为0）  </p>
+<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
+schools.splice(2, 0, &apos;江西理工大学&apos;);
+console.log(schools); //  [&quot;清华大学&quot;, &quot;北京大学&quot;, &quot;江西理工大学&quot;, &quot;浙江大学&quot;, &quot;同济大学&quot;]</code></pre><p>案例2：替换（参数二不为0）  </p>
+<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
+schools.splice(2, 2, &apos;江西理工大学&apos;);
+console.log(schools); // [&quot;清华大学&quot;, &quot;北京大学&quot;, &quot;江西理工大学&quot;]</code></pre><h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><h4 id="indexOf方法"><a href="#indexOf方法" class="headerlink" title="indexOf方法"></a>indexOf方法</h4><p><code>变量名.indexOf(参数一，参数二);</code><br><code>indexOf()</code>括号内可以写两个参数,不过我们常用的是添加一个参数的情况,大家重点关注一个参数的情况即可<br>1.参数一，要查找的目标<br>2.参数二（<strong>可省略</strong>），查找的起始位置</p>
+<h4 id="一个参数-1"><a href="#一个参数-1" class="headerlink" title="一个参数"></a>一个参数</h4><pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
+let result = schools.indexOf(&apos;大连理工&apos;);
+console.log(result); // -1</code></pre><p><strong><em>注：返回值是-1表示未找到,非-1数字表示找到的元素的下标</em></strong></p>
+<h4 id="两个参数-1"><a href="#两个参数-1" class="headerlink" title="两个参数"></a>两个参数</h4><pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
+let result = schools.indexOf(&apos;浙江大学&apos;, 3);
+console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从下标为 3 的位置（同济大学）开始寻找的，所以找不到，返回-1。</em></strong></p>
 
     </div>
 
@@ -375,7 +422,7 @@ console.log(number1 === number2); // false</code></pre><p><strong><em>注：由�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量定义"><span class="nav-number">1.</span> <span class="nav-text">变量定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let定义变量"><span class="nav-number">1.1.</span> <span class="nav-text">let定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const定义变量"><span class="nav-number">1.2.</span> <span class="nav-text">const定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const差别"><span class="nav-number">1.3.</span> <span class="nav-text">let和const差别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值类型（主要包括：整数-浮点数和NaN非数值）"><span class="nav-number">2.</span> <span class="nav-text">数值类型（主要包括：整数,浮点数和NaN非数值）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数"><span class="nav-number">2.1.</span> <span class="nav-text">整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#八进制"><span class="nav-number">2.1.1.</span> <span class="nav-text">八进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#十六进制"><span class="nav-number">2.1.2.</span> <span class="nav-text">十六进制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">2.3.</span> <span class="nav-text">NaN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换-字符串模板"><span class="nav-number">3.</span> <span class="nav-text">类型转换&#x2F;字符串模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换"><span class="nav-number">3.1.1.</span> <span class="nav-text">隐式转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制类型转换"><span class="nav-number">3.1.2.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">3.2.</span> <span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拼接"><span class="nav-number">3.2.1.</span> <span class="nav-text">字符串拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义符（-）的使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">转义符（\）的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串中使用三元表达式"><span class="nav-number">3.2.3.</span> <span class="nav-text">模版字符串中使用三元表达式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符（相等-全等）"><span class="nav-number">4.</span> <span class="nav-text">运算符（相等&#x2F;全等）</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量定义"><span class="nav-number">1.</span> <span class="nav-text">变量定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let定义变量"><span class="nav-number">1.1.</span> <span class="nav-text">let定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const定义变量"><span class="nav-number">1.2.</span> <span class="nav-text">const定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const差别"><span class="nav-number">1.3.</span> <span class="nav-text">let和const差别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值类型（主要包括：整数-浮点数和NaN非数值）"><span class="nav-number">2.</span> <span class="nav-text">数值类型（主要包括：整数,浮点数和NaN非数值）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数"><span class="nav-number">2.1.</span> <span class="nav-text">整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#八进制"><span class="nav-number">2.1.1.</span> <span class="nav-text">八进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#十六进制"><span class="nav-number">2.1.2.</span> <span class="nav-text">十六进制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">2.3.</span> <span class="nav-text">NaN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换-字符串模板"><span class="nav-number">3.</span> <span class="nav-text">类型转换&#x2F;字符串模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换"><span class="nav-number">3.1.1.</span> <span class="nav-text">隐式转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制类型转换"><span class="nav-number">3.1.2.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">3.2.</span> <span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拼接"><span class="nav-number">3.2.1.</span> <span class="nav-text">字符串拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义符（-）的使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">转义符（\）的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串中使用三元表达式"><span class="nav-number">3.2.3.</span> <span class="nav-text">模版字符串中使用三元表达式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符（相等-全等）"><span class="nav-number">4.</span> <span class="nav-text">运算符（相等&#x2F;全等）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组操作（增-删-改-查）"><span class="nav-number">5.</span> <span class="nav-text">数组操作（增&#x2F;删&#x2F;改&#x2F;查）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增"><span class="nav-number">5.1.</span> <span class="nav-text">增</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#push方法（从尾加）"><span class="nav-number">5.1.1.</span> <span class="nav-text">push方法（从尾加）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unshift方法（从头加）"><span class="nav-number">5.1.2.</span> <span class="nav-text">unshift方法（从头加）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删"><span class="nav-number">5.2.</span> <span class="nav-text">删</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pop方法（从后往前删除）"><span class="nav-number">5.2.1.</span> <span class="nav-text">pop方法（从后往前删除）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shift方法（从前往后删除）"><span class="nav-number">5.2.2.</span> <span class="nav-text">shift方法（从前往后删除）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改（可实现增加和删除）"><span class="nav-number">5.3.</span> <span class="nav-text">改（可实现增加和删除）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除"><span class="nav-number">5.3.1.</span> <span class="nav-text">splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个参数"><span class="nav-number">5.3.2.</span> <span class="nav-text">一个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个参数"><span class="nav-number">5.3.3.</span> <span class="nav-text">两个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三个参数"><span class="nav-number">5.3.4.</span> <span class="nav-text">三个参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查"><span class="nav-number">5.4.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#indexOf方法"><span class="nav-number">5.4.1.</span> <span class="nav-text">indexOf方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个参数-1"><span class="nav-number">5.4.2.</span> <span class="nav-text">一个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个参数-1"><span class="nav-number">5.4.3.</span> <span class="nav-text">两个参数</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
