@@ -147,6 +147,165 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="name" content="优秀的人">
+      <meta itemprop="description" content="日常学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="优秀">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/12/JavaScript/" class="post-title-link" itemprop="url">JavaScript</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-08-12 10:19:12 / Modified: 13:45:53" itemprop="dateCreated datePublished" datetime="2020-08-12T10:19:12+08:00">2020-08-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="let定义变量"><a href="#let定义变量" class="headerlink" title="let定义变量"></a>let定义变量</h4><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png" alt=""></p>
+<h4 id="const定义变量"><a href="#const定义变量" class="headerlink" title="const定义变量"></a>const定义变量</h4><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/const.png" alt=""></p>
+<h4 id="let和const差别"><a href="#let和const差别" class="headerlink" title="let和const差别"></a>let和const差别</h4><p>差别一：let定义的变量可以被多次重新赋值<br>const定义的变量只能赋值一次  </p>
+<pre><code>let name = &apos;Bob&apos;;
+console.log(name); // Bob
+name = &apos;Tom&apos;;
+console.log(name); // Tom  
+
+const name = &apos;Bob&apos;;
+console.log(name); // Bob
+name = &apos;Tom&apos;; // 报错
+console.log(name); // 不执行</code></pre><p>差别二：let定义变量的时候，可以不赋初始值<br><strong><em>const定义变量的时候，要赋初始值，否则会报错</em></strong>  </p>
+<p><code>let age;  
+console.log(age); // undefined</code>  </p>
+<p><code>const age; // 报错  
+console.log(age);  // 不执行</code></p>
+<h2 id="数值类型（主要包括：整数-浮点数和NaN非数值）"><a href="#数值类型（主要包括：整数-浮点数和NaN非数值）" class="headerlink" title="数值类型（主要包括：整数,浮点数和NaN非数值）"></a>数值类型（主要包括：整数,浮点数和NaN非数值）</h2><h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><h4 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h4><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%85%AB%E8%BF%9B%E5%88%B6.png" alt=""></p>
+<h4 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h4><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6.png" alt=""></p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>浮点数值必须包含一个小数点，并且小数点后面至少有一位数字.小数点前面可以没有数字，但是不推荐这种写法。 </p>
+<pre><code>let floatNumber1 = 2.0;
+let floatNumber2 = 0.4;
+let floatNumber3 = .2; // 正确，但是不推荐  </code></pre><p><strong><em>精度丢失</em></strong><br>例如0.1加0.2结果不是0.3  </p>
+<pre><code>let number1 = 0.1;
+let number2 = 0.2;
+console.log(number1 + number2); // 0.30000000000000004`</code></pre><p>因此<strong><em>不要使用</em></strong>下面这种判断<br><code>if (a + b == 0.3) {
+  console.log(&#39;输出成功&#39;);
+}</code></p>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>就是两个变量执行了一个运算，例如+、-、*、/当中的一种，返回的结果仍然是数字类型，但是执行的数学运算没有成功。  </p>
+<pre><code>let a = &apos;number&apos;;  
+let b = 10;  
+let c = a / b;
+console.log(c); // NaN
+console.log(typeof c); // number</code></pre><h2 id="类型转换-字符串模板"><a href="#类型转换-字符串模板" class="headerlink" title="类型转换/字符串模板"></a>类型转换/字符串模板</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><h4 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h4><p>数字字符串加数字,数字隐式转换为字符串  </p>
+<pre><code>console.log(20+&apos;20&apos;); // 2020
+// 调换位置亦可
+console.log(&apos;20&apos;+20); // 2020</code></pre><p>数字字符串与数字做非加法运算,字符串隐式转换为数字  </p>
+<pre><code>console.log(&apos;20&apos;-10); // 10
+console.log(10*&apos;10&apos;); // 100
+console.log(10/&apos;2&apos;); // 5</code></pre><p>数字字符串与数字字符串做非加法运算,隐式转换为数字  </p>
+<pre><code>console.log(&apos;20&apos;-&apos;10&apos;); // 10
+console.log(&apos;20&apos;/&apos;10&apos;); // 2
+console.log(&apos;20&apos;*&apos;10&apos;); // 200</code></pre><h4 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h4><p><strong>1.parseInt</strong><br>整数字符串转换为整数</p>
+<pre><code>let number = &apos;20&apos;;
+//  将number转换为整数类型
+let converNumber = parseInt(number);
+console.log(converNumber); // 20
+// 判断转换后的数据类型
+onsole.log(typeof converNumber); // number</code></pre><p>小数字符串转换为整数  </p>
+<pre><code>let number = &apos;20.5&apos;;
+let converNumber = parseInt(number);
+console.log(converNumber); // 20  不足21一律按照20算
+console.log(typeof converNumber); // number</code></pre><p>小数转换为整数  </p>
+<pre><code>let number = 20.5;
+let converNumber = parseInt(number);
+console.log(converNumber); // 20</code></pre><p><strong>2.parseFloat</strong><br>将小数字符串转换为小数  </p>
+<pre><code>let number = &apos;20.9&apos;;
+let converNumber = parseFloat(number);
+console.log(converNumber); // 20.9
+console.log(typeof converNumber); // number</code></pre><h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h4><p>在一般的字符串中，如果我们要将字符串和变量拼接起来，要用加号（+）去拼接，例如：  </p>
+<pre><code>let firstName = &apos;胡&apos;;
+let lastName = &apos;雪岩&apos;;
+let say = &apos;大家好，我姓&apos; + firstName + &apos;，名&apos; + lastName;
+console.log(say);</code></pre><p>可以看的出，这个写法非常的繁琐，模版字符串就可以简化书写，模版字符串的核心是反引号（``）和 占位符<code>${expression}</code>，反引号的作用是将字符串和变量包起来，占位符的作用就是在字符串中插入变量，比如上面的代码我们可以使用模版字符串来进行改造：  </p>
+<pre><code>let firstName = &apos;胡&apos;;
+let lastName = &apos;雪岩&apos;;
+let say = `大家好，我姓${firstName}，名${lastName}`;
+console.log(say);</code></pre><h4 id="转义符（-）的使用"><a href="#转义符（-）的使用" class="headerlink" title="转义符（\）的使用"></a>转义符（\）的使用</h4><p>转义符在模版字符串和一般的字符串中都很常见，比如说我们要写下面这段代码：  </p>
+<pre><code>let str = &quot;华为正式发布操作系统---&quot;鸿蒙OS&quot;&quot;;//报错
+onsole.log(str);   </code></pre><p>这样的写法是错误的，但是我们就想在双引号里面写双引号，怎么办呢？这里就要用到转义符（\），在前后双引号前面添加一个转义符（\），代码如下：</p>
+<pre><code>let str = &quot;华为正式发布操作系统---\&quot;鸿蒙OS\&quot;&quot;;
+onsole.log(str);</code></pre><h4 id="模版字符串中使用三元表达式"><a href="#模版字符串中使用三元表达式" class="headerlink" title="模版字符串中使用三元表达式"></a>模版字符串中使用三元表达式</h4><p>这里我们就不去管字符串拼接的表达式了，直接使用模版字符串来写三元表达式，先写一个最简单的：  </p>
+<pre><code>let str = `这里是${false ? &apos;浙江&apos; : &apos;江苏&apos;}`;
+console.log(str); // 江苏</code></pre><p>加大难度：  </p>
+<pre><code>let str = `这里是${false ? &apos;浙江&apos; : `江苏-${true ? &apos;南京&apos; : &apos;常州&apos;}`}`;
+console.log(str); // 这里是江苏-南京</code></pre><p>实例使用：<br>js 代码中组装 HTML 代码，然后显示在屏幕中：  </p>
+<pre><code>let htmlCode = `
+&lt;p&gt;&lt;/p&gt;
+${
+  true
+    ? `&lt;img src=&apos;https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&amp;fm=26&amp;gp=0.jpg&apos; /&gt;`
+    : `&lt;img src=&apos;&apos; /&gt;`
+}
+`;
+console.log(htmlCode);
+// &lt;p&gt;&lt;/p&gt;
+//    &lt;img src=&apos;https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&amp;fm=26&amp;gp=0.jpg&apos; /&gt;</code></pre><h3 id="运算符（相等-全等）"><a href="#运算符（相等-全等）" class="headerlink" title="运算符（相等/全等）"></a>运算符（相等/全等）</h3><p>判断两个值是否相同,这时候就要用到相等(==)和全等(===)运算符,这两个运算符的区别是前者只判断值是否相同,后者在此基础上还要判断类型是否相同。<br>代码比较：<br>相等（==）代码：</p>
+<pre><code>let number1 = &apos;45&apos;;
+let number2 = 45;
+console.log(number1 == number2); // true</code></pre><p>全等（===）代码：  </p>
+<pre><code>let number1 = &apos;45&apos;;
+let number2 = 45;
+console.log(number1 === number2); // false</code></pre><p><strong><em>注：由于相等错在类型转换问题,为了保持代码中数据类型的完整性,推荐使用全等</em></strong></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1084,7 +1243,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
