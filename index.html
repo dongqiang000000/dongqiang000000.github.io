@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="日常学习记录">
@@ -101,6 +101,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -115,26 +116,43 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -160,7 +178,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -188,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:13:42" itemprop="dateModified" datetime="2020-08-13T10:13:42+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-13 10:29:47" itemprop="dateModified" datetime="2020-08-13T10:29:47+08:00">2020-08-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -205,6 +223,34 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -376,7 +422,7 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -404,10 +450,51 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 09:46:21" itemprop="dateModified" datetime="2020-08-13T09:46:21+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-13 10:34:44" itemprop="dateModified" datetime="2020-08-13T10:34:44+08:00">2020-08-13</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">java学习笔记</span></a>
+                </span>
+            </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -418,16 +505,7 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>categories:</p>
-<ul>
-<li>笔记</li>
-<li><ul>
-<li>java学习笔记</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><h3 id="排序规则"><a href="#排序规则" class="headerlink" title="排序规则"></a>排序规则</h3><p>1.指向数组中两个相邻的元素（最开始是数组的头两个元素），并且比较他们的大小。<br>2.如果前者比后者大，则交换他们的位置。<br>3.如果后者比前者大，则不交换。<br>4.然后依次后移，每次循环将最大元素移动最后一个位置  </p>
+          <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><h3 id="排序规则"><a href="#排序规则" class="headerlink" title="排序规则"></a>排序规则</h3><p>1.指向数组中两个相邻的元素（最开始是数组的头两个元素），并且比较他们的大小。<br>2.如果前者比后者大，则交换他们的位置。<br>3.如果后者比前者大，则不交换。<br>4.然后依次后移，每次循环将最大元素移动最后一个位置  </p>
 <h3 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a>java代码实现</h3><pre><code>// 冒泡排序  
 public static void bubbleSort(int[] array) {  
 // 1. 每次循环，都能冒泡出剩余元素中最大的元素，因此需要循环 array.length 次  
@@ -527,7 +605,7 @@ array[j - 1] = temp;
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E6%8E%A5%E5%8F%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -555,10 +633,51 @@ array[j - 1] = temp;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 09:46:21" itemprop="dateModified" datetime="2020-08-13T09:46:21+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-13 10:34:02" itemprop="dateModified" datetime="2020-08-13T10:34:02+08:00">2020-08-13</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">java学习笔记</span></a>
+                </span>
+            </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/17/%E6%8E%A5%E5%8F%A3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/%E6%8E%A5%E5%8F%A3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -569,16 +688,7 @@ array[j - 1] = temp;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>categories:</p>
-<ul>
-<li>笔记</li>
-<li><ul>
-<li>java学习笔记</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="接口的语法"><a href="#接口的语法" class="headerlink" title="接口的语法"></a>接口的语法</h2><p>  public interface LoginService{<br>  String getLogin();<br>  }<br><strong>注：接口的方法默认不需要方法体（大括号就不需要啦）</strong>  </p>
+          <h2 id="接口的语法"><a href="#接口的语法" class="headerlink" title="接口的语法"></a>接口的语法</h2><p>  public interface LoginService{<br>  String getLogin();<br>  }<br><strong>注：接口的方法默认不需要方法体（大括号就不需要啦）</strong>  </p>
 <p>UML接口的定义：<br><img src="https://style.youkeda.com/img/ham/course/j2/RoleService.svg" alt=""><br>如上图，这个图标指的就是接口（interface）：<br><img src="https://style.youkeda.com/img/ham/course/j2/interface.png" alt=""></p>
 <h2 id="接口实现类"><a href="#接口实现类" class="headerlink" title="接口实现类"></a>接口实现类</h2><p><img src="https://style.youkeda.com/img/ham/course/j2/implements.svg" alt=""><br><strong>注：1.接口定义的方法在实现类里必须要全部实现了，而且方法签名要一模一样（同样的方法名称、方法参数、方法返回值）<br>2.由于接口定义的方法都是 public 的，所以实现类的方法控制修饰符也必须是public</strong>  </p>
 <h3 id="一个类实现多个接口"><a href="#一个类实现多个接口" class="headerlink" title="一个类实现多个接口"></a>一个类实现多个接口</h3><pre><code>package com.youkeda.service.impl;
@@ -680,7 +790,7 @@ System.out.println(str);
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E7%BB%A7%E6%89%BF%E5%92%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -708,10 +818,51 @@ System.out.println(str);
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 09:46:21" itemprop="dateModified" datetime="2020-08-13T09:46:21+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-13 10:34:02" itemprop="dateModified" datetime="2020-08-13T10:34:02+08:00">2020-08-13</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">java学习笔记</span></a>
+                </span>
+            </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/17/%E7%BB%A7%E6%89%BF%E5%92%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/%E7%BB%A7%E6%89%BF%E5%92%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -722,16 +873,7 @@ System.out.println(str);
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>categories:</p>
-<ul>
-<li>笔记</li>
-<li><ul>
-<li>java学习笔记</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="继承语法"><a href="#继承语法" class="headerlink" title="继承语法"></a>继承语法</h2><p>Animal.java  </p>
+          <h2 id="继承语法"><a href="#继承语法" class="headerlink" title="继承语法"></a>继承语法</h2><p>Animal.java  </p>
 <pre><code>package com.youkeda.model;  
 
 public class Animal {
@@ -845,7 +987,7 @@ this.packageName = packageName;
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -873,10 +1015,51 @@ this.packageName = packageName;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 09:46:21" itemprop="dateModified" datetime="2020-08-13T09:46:21+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-13 10:33:47" itemprop="dateModified" datetime="2020-08-13T10:33:47+08:00">2020-08-13</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">java学习笔记</span></a>
+                </span>
+            </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/17/%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -887,16 +1070,7 @@ this.packageName = packageName;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>categories:</p>
-<ul>
-<li>笔记</li>
-<li><ul>
-<li>java学习笔记</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="静态变量（常量）"><a href="#静态变量（常量）" class="headerlink" title="静态变量（常量）"></a>静态变量（常量）</h2><h3 id="两种常量常用场景"><a href="#两种常量常用场景" class="headerlink" title="两种常量常用场景"></a>两种常量常用场景</h3><p>1.常用的字符串值<br>2.需要在内存做缓存的值  </p>
+          <h2 id="静态变量（常量）"><a href="#静态变量（常量）" class="headerlink" title="静态变量（常量）"></a>静态变量（常量）</h2><h3 id="两种常量常用场景"><a href="#两种常量常用场景" class="headerlink" title="两种常量常用场景"></a>两种常量常用场景</h3><p>1.常用的字符串值<br>2.需要在内存做缓存的值  </p>
 <h4 id="常用字符串的常量"><a href="#常用字符串的常量" class="headerlink" title="常用字符串的常量"></a>常用字符串的常量</h4><p>不使用常量：  </p>
 <pre><code>public class UserService{  
   public boolean hasKey(String key){  
@@ -974,7 +1148,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1009,6 +1183,34 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/10/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/10/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>935</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -1045,7 +1247,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/09/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1073,10 +1275,47 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 09:31:39" itemprop="dateModified" datetime="2020-08-13T09:31:39+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-13 10:26:21" itemprop="dateModified" datetime="2020-08-13T10:26:21+08:00">2020-08-13</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/09/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/09/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>170</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -1087,12 +1326,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>categories:</p>
-<ul>
-<li>笔记</li>
-</ul>
-<hr>
-<h2 id="本地部署博客："><a href="#本地部署博客：" class="headerlink" title="本地部署博客："></a>本地部署博客：</h2><p>1.本地安装git<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">官网下载</a><br>2.本地配置SSH并绑定到GitHub<a href="https://dongqiang000000.github.io/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener">见其它文章</a><br>3.本地安装node.js<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">官网下载</a><br>4.本地安装Hexo(在<code>git-bate</code>中执行<code>npm install -g hexo-cli</code>)<br>5.clone到本地(<code>git clone -b dev 仓库地址</code>)<br>6.安装node依赖(进入clone的仓库目录输入<code>npm install</code>)</p>
+          <h2 id="本地部署博客："><a href="#本地部署博客：" class="headerlink" title="本地部署博客："></a>本地部署博客：</h2><p>1.本地安装git<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">官网下载</a><br>2.本地配置SSH并绑定到GitHub<a href="https://dongqiang000000.github.io/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener">见其它文章</a><br>3.本地安装node.js<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">官网下载</a><br>4.本地安装Hexo(在<code>git-bate</code>中执行<code>npm install -g hexo-cli</code>)<br>5.clone到本地(<code>git clone -b dev 仓库地址</code>)<br>6.安装node依赖(进入clone的仓库目录输入<code>npm install</code>)</p>
 
       
     </div>
@@ -1115,7 +1349,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/09/hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1143,10 +1377,47 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 09:31:39" itemprop="dateModified" datetime="2020-08-13T09:31:39+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-13 10:27:45" itemprop="dateModified" datetime="2020-08-13T10:27:45+08:00">2020-08-13</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/09/hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/09/hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>525</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -1157,12 +1428,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>categories:</p>
-<ul>
-<li>笔记</li>
-</ul>
-<hr>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p><code>hexo init blog</code>创建博客文件夹<br>进入blog文件夹输入：<br><code>npm install hexo-deployer-git --save</code>安装发布工具<br>在<code>_config.yml</code>文件中最底部修改配置文件：<br> theme: landscape<br> deploy:<br>   type: git<br>   repository: 你的GitHub仓库地址<br>   branch: master  </p>
+          <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p><code>hexo init blog</code>创建博客文件夹<br>进入blog文件夹输入：<br><code>npm install hexo-deployer-git --save</code>安装发布工具<br>在<code>_config.yml</code>文件中最底部修改配置文件：<br> theme: landscape<br> deploy:<br>   type: git<br>   repository: 你的GitHub仓库地址<br>   branch: master  </p>
 <h3 id="hexo提交"><a href="#hexo提交" class="headerlink" title="hexo提交"></a>hexo提交</h3><p><code>hexo clean</code>清除缓存<br><code>hexo g</code>生成静态文件<br><code>hexo d</code>把生成的文件部署到博客  </p>
 <h3 id="Hexo-发布新博客"><a href="#Hexo-发布新博客" class="headerlink" title="Hexo 发布新博客"></a>Hexo 发布新博客</h3><p><code>hexo new 博客名</code>创建新的.md文件</p>
 <p>注：创建的md文件存放在我们博客文件夹下<code>source/_posts</code>文件夹内，因此我们可以找到这个文件并编辑内容。</p>
@@ -1189,7 +1455,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/m.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1217,10 +1483,47 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 09:31:39" itemprop="dateModified" datetime="2020-08-13T09:31:39+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-13 10:28:32" itemprop="dateModified" datetime="2020-08-13T10:28:32+08:00">2020-08-13</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>958</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -1231,12 +1534,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>categories:</p>
-<ul>
-<li>笔记</li>
-</ul>
-<hr>
-<h2 id="Git的基础配置和命令"><a href="#Git的基础配置和命令" class="headerlink" title="Git的基础配置和命令"></a>Git的基础配置和命令</h2><h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p><code>cat ~/.ssh/id_rsa.pub</code>查看SSH<br><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code>生成SSH。（输入后按3次回车）<br>将得到的SSH复制到GitHub。</p>
+          <h2 id="Git的基础配置和命令"><a href="#Git的基础配置和命令" class="headerlink" title="Git的基础配置和命令"></a>Git的基础配置和命令</h2><h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p><code>cat ~/.ssh/id_rsa.pub</code>查看SSH<br><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code>生成SSH。（输入后按3次回车）<br>将得到的SSH复制到GitHub。</p>
 <h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p><strong>在你第一次使用git的时候，git会提示进行全局变量设置：</strong><br><code>git config --global user.name &quot;叶冰&quot;</code>告诉git名字<br><code>git config --global user.email &quot;hhdd576@126.com&quot;</code>告诉git邮箱<br><strong>注：这个配置只需进行一次。</strong>  </p>
 <p><strong>常见的一些Linux命令：</strong><br><code>ls</code>查看当前目录下文件<br><code>ls -a</code>查看当前目录下文件(包括隐藏文件)<br><code>touch 文件</code>在当前目录下创建文件<br><code>mkdir 文件夹</code>在当前目录下创建文件夹<br><code>cd 文件目录</code>进入某个文件夹（直接cd，返回根目录）<br><code>rm -rf 文件</code>删除当前目录下是指定文件（慎用）  </p>
 <h3 id="Git提交（三步）"><a href="#Git提交（三步）" class="headerlink" title="Git提交（三步）"></a>Git提交（三步）</h3><p>(1)git add<br><code>git add -A</code><br>(2)git commit<br><code>git commit -m &quot;本次提交的修改的备注&quot;</code><br><strong>注：没有创建文件提交时可合并(1)(2)为：<code>git commit -m &quot;本次提交的修改的备注&quot;</code>。</strong><br>(3)git push<br>第一次提交到本分支：<code>git push origin master</code><br><strong>注：绑定多个仓库时，origin要替换为相应的仓库名；当在其它分支进行提交时，master要替换为相应分支名</strong>。<br>第2~n次提交到本分支:<code>git push</code><br><strong>注：提交时，需要本地仓库和远程仓库其中一个是另一个的真子集才可以提交，所以提交前要养成先用 <code>git pull</code>抓取远程仓库内容的习惯（多人开发）。</strong>  </p>
@@ -1315,8 +1613,6 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="优秀的人"
-      src="/images/m.jpg">
   <p class="site-author-name" itemprop="name">优秀的人</p>
   <div class="site-description" itemprop="description">日常学习记录</div>
 </div>
@@ -1331,13 +1627,11 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-          
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
@@ -1370,11 +1664,47 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">优秀的人</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">15k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">14 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
+
+
+
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -1397,7 +1727,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -1410,6 +1740,10 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
 
 
 
+  
+<script src="/js/local-search.js"></script>
+
+
 
 
 
@@ -1425,5 +1759,34 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
 
   
 
-</body>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'ME8PzKhsTY1BoXzzqxER9HkV-gzGzoHsz',
+      appKey     : 'NmruStj4hM3eBMIiNfyYvJvk',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":70,"height":120},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
