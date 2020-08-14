@@ -34,8 +34,12 @@
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/const.png">
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%85%AB%E8%BF%9B%E5%88%B6.png">
 <meta property="og:image" content="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6.png">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/1.jpg">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/2.jpg">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/3.jpg">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/6/4.jpg">
 <meta property="article:published_time" content="2020-08-12T02:19:12.000Z">
-<meta property="article:modified_time" content="2020-08-14T06:37:56.984Z">
+<meta property="article:modified_time" content="2020-08-14T08:17:30.230Z">
 <meta property="article:author" content="优秀的人">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -139,7 +143,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -228,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-14 14:37:56" itemprop="dateModified" datetime="2020-08-14T14:37:56+08:00">2020-08-14</time>
+                <time title="修改时间：2020-08-14 16:17:30" itemprop="dateModified" datetime="2020-08-14T16:17:30+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,7 +275,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.1k</span>
+              <span>6.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -429,8 +433,47 @@ let result = schools.indexOf(&apos;大连理工&apos;);
 console.log(result); // -1</code></pre><p><strong><em>注：返回值是-1表示未找到,非-1数字表示找到的元素的下标</em></strong></p>
 <h4 id="两个参数-1"><a href="#两个参数-1" class="headerlink" title="两个参数"></a>两个参数</h4><pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
 let result = schools.indexOf(&apos;浙江大学&apos;, 3);
-console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从下标为 3 的位置（同济大学）开始寻找的，所以找不到，返回-1。</em></strong></p>
+console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从下标为 3 的位置（同济大学）开始寻找的，所以找不到，返回-1。</em></strong>  </p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="声明函数"><a href="#声明函数" class="headerlink" title="声明函数"></a>声明函数</h3><h4 id="function命令声明"><a href="#function命令声明" class="headerlink" title="function命令声明"></a>function命令声明</h4><p><img src="https://document.youkeda.com/P3-4-HTML-CSS/6/1.jpg" alt></p>
+<h4 id="函数表达式声明"><a href="#函数表达式声明" class="headerlink" title="函数表达式声明"></a>函数表达式声明</h4><p><img src="https://document.youkeda.com/P3-4-HTML-CSS/6/2.jpg" alt></p>
+<h4 id="函数声明提升"><a href="#函数声明提升" class="headerlink" title="函数声明提升"></a>函数声明提升</h4><p><strong><em>函数调用必须在函数定义之后，但是function声明函数会被提升，所以function声明函数可以先调用后声明</em></strong>。<br>例如下面代码不会报错：  </p>
+<pre><code>f();  
+function f() {}  </code></pre><h4 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h4><p>当函数只使用一次时，通常使用IIFE (Immediately Invokable Function Expressions)：  </p>
+<pre><code>(function() {  
+  console.log(&quot;这个函数只执行一次&quot;);  
+})();  </code></pre><p>它会在函数声明后立即调用函数，除这一次调用外因为是匿名函数，所以无从调用。  </p>
+<h3 id="内置函数——计时器"><a href="#内置函数——计时器" class="headerlink" title="内置函数——计时器"></a>内置函数——计时器</h3><h4 id="计时器一"><a href="#计时器一" class="headerlink" title="计时器一"></a>计时器一</h4><p>延时执行setTimeout()函数语法：<br><img src="https://document.youkeda.com/P3-4-HTML-CSS/6/3.jpg" alt><br><strong><em>该定时器只执行一次，需要配合循环使用</em></strong><br>实现计时功能例子：  </p>
+<pre><code>// 首先定义计时总秒数，单位 s
+let i = 60;
 
+// 定义变量用来储存定时器的编号
+let timerId;
+
+// 写一个函数，这个函数即每次要执行的代码，能够完成上述的 1、2、3
+function count() {
+  console.log(i);
+  i--;
+  if (i &gt; 0) {
+    timerId = setTimeout(count, 1000);
+  } else {
+    // 清除计时器
+    clearTimeout(timerId);
+  }
+}
+
+// 首次调用该函数，开始第一次计时
+count();</code></pre><h4 id="定时器二"><a href="#定时器二" class="headerlink" title="定时器二"></a>定时器二</h4><p>无限循环调用setInterval<br><img src="https://document.youkeda.com/P3-4-HTML-CSS/6/4.jpg" alt><br><strong><em>该定时器会无限调用，要用clearInrerval清除定时器来结束</em></strong><br>实现计时功能例子：  </p>
+<pre><code>let i = 60;
+print();
+let timer = setInterval(print, 1000);
+
+function print() {
+  console.log(i);
+  i--;
+  if (i &lt; 1) {
+    clearInterval(timer);
+  }
+}</code></pre>
     </div>
 
     
@@ -475,7 +518,10 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
     <a href="/2020/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" rel="prev" title="数据结构与算法入门">
       <i class="fa fa-chevron-left"></i> 数据结构与算法入门
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/14/JavaScript%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6/" rel="next" title="JavaScript对象和事件">
+      JavaScript对象和事件 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -535,7 +581,7 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量定义"><span class="nav-number">1.</span> <span class="nav-text">变量定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let定义变量"><span class="nav-number">1.1.</span> <span class="nav-text">let定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const定义变量"><span class="nav-number">1.2.</span> <span class="nav-text">const定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const差别"><span class="nav-number">1.3.</span> <span class="nav-text">let和const差别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值类型（主要包括：整数-浮点数和NaN非数值）"><span class="nav-number">2.</span> <span class="nav-text">数值类型（主要包括：整数,浮点数和NaN非数值）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数"><span class="nav-number">2.1.</span> <span class="nav-text">整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#八进制"><span class="nav-number">2.1.1.</span> <span class="nav-text">八进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#十六进制"><span class="nav-number">2.1.2.</span> <span class="nav-text">十六进制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">2.3.</span> <span class="nav-text">NaN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换-字符串模板"><span class="nav-number">3.</span> <span class="nav-text">类型转换&#x2F;字符串模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换"><span class="nav-number">3.1.1.</span> <span class="nav-text">隐式转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制类型转换"><span class="nav-number">3.1.2.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">3.2.</span> <span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拼接"><span class="nav-number">3.2.1.</span> <span class="nav-text">字符串拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义符（-）的使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">转义符（\）的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串中使用三元表达式"><span class="nav-number">3.2.3.</span> <span class="nav-text">模版字符串中使用三元表达式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符（相等-全等）"><span class="nav-number">4.</span> <span class="nav-text">运算符（相等&#x2F;全等）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组操作（增-删-改-查）"><span class="nav-number">5.</span> <span class="nav-text">数组操作（增&#x2F;删&#x2F;改&#x2F;查）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增"><span class="nav-number">5.1.</span> <span class="nav-text">增</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#push方法（从尾加）"><span class="nav-number">5.1.1.</span> <span class="nav-text">push方法（从尾加）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unshift方法（从头加）"><span class="nav-number">5.1.2.</span> <span class="nav-text">unshift方法（从头加）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删"><span class="nav-number">5.2.</span> <span class="nav-text">删</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pop方法（从后往前删除）"><span class="nav-number">5.2.1.</span> <span class="nav-text">pop方法（从后往前删除）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shift方法（从前往后删除）"><span class="nav-number">5.2.2.</span> <span class="nav-text">shift方法（从前往后删除）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改（可实现增加和删除）"><span class="nav-number">5.3.</span> <span class="nav-text">改（可实现增加和删除）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除"><span class="nav-number">5.3.1.</span> <span class="nav-text">splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个参数"><span class="nav-number">5.3.2.</span> <span class="nav-text">一个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个参数"><span class="nav-number">5.3.3.</span> <span class="nav-text">两个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三个参数"><span class="nav-number">5.3.4.</span> <span class="nav-text">三个参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查"><span class="nav-number">5.4.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#indexOf方法"><span class="nav-number">5.4.1.</span> <span class="nav-text">indexOf方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个参数-1"><span class="nav-number">5.4.2.</span> <span class="nav-text">一个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个参数-1"><span class="nav-number">5.4.3.</span> <span class="nav-text">两个参数</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量定义"><span class="nav-number">1.</span> <span class="nav-text">变量定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let定义变量"><span class="nav-number">1.1.</span> <span class="nav-text">let定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const定义变量"><span class="nav-number">1.2.</span> <span class="nav-text">const定义变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const差别"><span class="nav-number">1.3.</span> <span class="nav-text">let和const差别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值类型（主要包括：整数-浮点数和NaN非数值）"><span class="nav-number">2.</span> <span class="nav-text">数值类型（主要包括：整数,浮点数和NaN非数值）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数"><span class="nav-number">2.1.</span> <span class="nav-text">整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#八进制"><span class="nav-number">2.1.1.</span> <span class="nav-text">八进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#十六进制"><span class="nav-number">2.1.2.</span> <span class="nav-text">十六进制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NaN"><span class="nav-number">2.3.</span> <span class="nav-text">NaN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换-字符串模板"><span class="nav-number">3.</span> <span class="nav-text">类型转换&#x2F;字符串模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式转换"><span class="nav-number">3.1.1.</span> <span class="nav-text">隐式转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强制类型转换"><span class="nav-number">3.1.2.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">3.2.</span> <span class="nav-text">模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拼接"><span class="nav-number">3.2.1.</span> <span class="nav-text">字符串拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义符（-）的使用"><span class="nav-number">3.2.2.</span> <span class="nav-text">转义符（\）的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模版字符串中使用三元表达式"><span class="nav-number">3.2.3.</span> <span class="nav-text">模版字符串中使用三元表达式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符（相等-全等）"><span class="nav-number">4.</span> <span class="nav-text">运算符（相等&#x2F;全等）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组操作（增-删-改-查）"><span class="nav-number">5.</span> <span class="nav-text">数组操作（增&#x2F;删&#x2F;改&#x2F;查）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增"><span class="nav-number">5.1.</span> <span class="nav-text">增</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#push方法（从尾加）"><span class="nav-number">5.1.1.</span> <span class="nav-text">push方法（从尾加）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unshift方法（从头加）"><span class="nav-number">5.1.2.</span> <span class="nav-text">unshift方法（从头加）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删"><span class="nav-number">5.2.</span> <span class="nav-text">删</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pop方法（从后往前删除）"><span class="nav-number">5.2.1.</span> <span class="nav-text">pop方法（从后往前删除）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shift方法（从前往后删除）"><span class="nav-number">5.2.2.</span> <span class="nav-text">shift方法（从前往后删除）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改（可实现增加和删除）"><span class="nav-number">5.3.</span> <span class="nav-text">改（可实现增加和删除）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除"><span class="nav-number">5.3.1.</span> <span class="nav-text">splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个参数"><span class="nav-number">5.3.2.</span> <span class="nav-text">一个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个参数"><span class="nav-number">5.3.3.</span> <span class="nav-text">两个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三个参数"><span class="nav-number">5.3.4.</span> <span class="nav-text">三个参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查"><span class="nav-number">5.4.</span> <span class="nav-text">查</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#indexOf方法"><span class="nav-number">5.4.1.</span> <span class="nav-text">indexOf方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个参数-1"><span class="nav-number">5.4.2.</span> <span class="nav-text">一个参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个参数-1"><span class="nav-number">5.4.3.</span> <span class="nav-text">两个参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明函数"><span class="nav-number">6.1.</span> <span class="nav-text">声明函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#function命令声明"><span class="nav-number">6.1.1.</span> <span class="nav-text">function命令声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数表达式声明"><span class="nav-number">6.1.2.</span> <span class="nav-text">函数表达式声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数声明提升"><span class="nav-number">6.1.3.</span> <span class="nav-text">函数声明提升</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#立即执行函数"><span class="nav-number">6.1.4.</span> <span class="nav-text">立即执行函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置函数——计时器"><span class="nav-number">6.2.</span> <span class="nav-text">内置函数——计时器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计时器一"><span class="nav-number">6.2.1.</span> <span class="nav-text">计时器一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定时器二"><span class="nav-number">6.2.2.</span> <span class="nav-text">定时器二</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -551,7 +597,7 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -578,7 +624,7 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
     <h3 class="widget-title">标签云</h3>
     <div id="myCanvasContainer" class="widget tagcloud">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li></ul>
         </canvas>
     </div>
 </div>
@@ -613,13 +659,13 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">21k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
 </div>
 
     <!-- 网站运行时间的设置 -->

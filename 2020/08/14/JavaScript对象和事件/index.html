@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="对象对象概念什么是对象？简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合： 自定义对象的属性操作属性读取JavaScript 中有两种方法读取一个对象的属性：点运算符和方括号运算符。   let person &#x3D; {   name: &amp;apos;henry&amp;apos;,   age: 18 }  console.log(person.name); console">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript对象和事件">
+<meta property="og:url" content="http://yoursite.com/2020/08/14/JavaScript%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6/index.html">
+<meta property="og:site_name" content="优秀">
+<meta property="og:description" content="对象对象概念什么是对象？简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合： 自定义对象的属性操作属性读取JavaScript 中有两种方法读取一个对象的属性：点运算符和方括号运算符。   let person &#x3D; {   name: &amp;apos;henry&amp;apos;,   age: 18 }  console.log(person.name); console">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://document.youkeda.com/P3-4-HTML-CSS/7/1.jpg">
+<meta property="article:published_time" content="2020-08-14T08:20:09.000Z">
+<meta property="article:modified_time" content="2020-08-14T09:30:44.340Z">
+<meta property="article:author" content="优秀的人">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://document.youkeda.com/P3-4-HTML-CSS/7/1.jpg">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/14/JavaScript%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JavaScript对象和事件 | 优秀</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">优秀</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/14/JavaScript%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="优秀的人">
+      <meta itemprop="description" content="日常学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="优秀">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript对象和事件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-14 16:20:09 / 修改时间：17:30:44" itemprop="dateCreated datePublished" datetime="2020-08-14T16:20:09+08:00">2020-08-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">JavaScript学习笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/14/JavaScript%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/14/JavaScript%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="对象概念"><a href="#对象概念" class="headerlink" title="对象概念"></a>对象概念</h3><p>什么是对象？简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合：<br><img src="https://document.youkeda.com/P3-4-HTML-CSS/7/1.jpg" alt></p>
+<h3 id="自定义对象的属性操作"><a href="#自定义对象的属性操作" class="headerlink" title="自定义对象的属性操作"></a>自定义对象的属性操作</h3><h4 id="属性读取"><a href="#属性读取" class="headerlink" title="属性读取"></a>属性读取</h4><p>JavaScript 中有两种方法读取一个对象的属性：<strong>点运算符和方括号运算符</strong>。  </p>
+<pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18
+}
+
+console.log(person.name);
+console.log(person[&apos;name&apos;]);  </code></pre><p>两种写法的效果是一样的，都能够读取对应属性的值，但是方括号运算符的方括号中可以是一个变量。</p>
+<pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18
+}
+
+let variable = &apos;name&apos;;
+console.log(person[variable]);
+
+variable = &apos;age&apos;;
+console.log(person[variable]);  </code></pre><h4 id="属性赋值"><a href="#属性赋值" class="headerlink" title="属性赋值"></a>属性赋值</h4><p>属性的赋值和读取一样，可以通过点运算符和方括号运算符完成：  </p>
+<pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18
+}
+
+person.name = &apos;tom&apos;;
+person[&apos;age&apos;] = 10
+
+console.log(person.name);
+console.log(person.age);  </code></pre><h4 id="属性查看"><a href="#属性查看" class="headerlink" title="属性查看"></a>属性查看</h4><p>查看一个对象本身的所有属性，可以使用<code>Object.keys</code>方法：</p>
+<pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18
+}
+
+console.log(Object.keys(person));//输出一个数组  </code></pre><h4 id="属性删除和增加"><a href="#属性删除和增加" class="headerlink" title="属性删除和增加"></a>属性删除和增加</h4><p>如果要删除对象中的某个属性，可以使用 delete 命令：  </p>
+<pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18
+}
+
+delete person.name;
+console.log(person);</code></pre><p>增加属性：  </p>
+<pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18
+}
+
+person.gender = &apos;male&apos;;  </code></pre><h3 id="遍历对象属性"><a href="#遍历对象属性" class="headerlink" title="遍历对象属性"></a>遍历对象属性</h3><h4 id="for…in遍历"><a href="#for…in遍历" class="headerlink" title="for…in遍历"></a>for…in遍历</h4><pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18,
+}
+
+for (var key in person) {
+  console.log(&apos;键名：&apos; + key + &apos;；键值：&apos; + person[key]);
+}  </code></pre><h4 id="借助Object-keys遍历"><a href="#借助Object-keys遍历" class="headerlink" title="借助Object.keys遍历"></a>借助Object.keys遍历</h4><pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18,
+}
+
+let keys = Object.keys(person);
+
+for (let i = 0; i &lt; keys.length; i++) {
+  console.log(&apos;键名：&apos; + keys[i] + &apos;；键值：&apos; + person[keys[i]]);
+}  </code></pre><h3 id="对象的继承"><a href="#对象的继承" class="headerlink" title="对象的继承"></a>对象的继承</h3><p>除了用“字面量”和自定义的构造方法创建对象外，我们还可以用 JavaScript 提供的构造函数 Object() 或者“继承”来创建对象： </p>
+<pre><code>// 字面量
+let o1 = {
+  name: &apos;alice&apos;,
+};
+
+// 构造函数
+let o2 = new Object();
+let o3 = new Object();
+
+// 继承
+let o4 = new o1();  </code></pre><h4 id="属性是否存在：in"><a href="#属性是否存在：in" class="headerlink" title="属性是否存在：in"></a>属性是否存在：in</h4><p>我们可以用 in 运算符来判断对象是否拥有某个属性：  </p>
+<pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18,
+};
+
+&apos;name&apos; in person;//true
+&apos;gender&apos; in person;//false
+&apos;toString&apos; in person;//true</code></pre><p><strong><em>注：<code>toString</code>是 Object 对象的属性。person 继承自 Object 所以也有这个属性。<br>可见，由于继承的存在，一个对象中的属性分成了两类：继承属性和自身属性。</em></strong></p>
+<h4 id="自身属性是否存在：hasOwnProperty"><a href="#自身属性是否存在：hasOwnProperty" class="headerlink" title="自身属性是否存在：hasOwnProperty"></a>自身属性是否存在：hasOwnProperty</h4><pre><code>let person = {
+  name: &apos;henry&apos;,
+  age: 18,
+};
+
+person.hasOwnProperty(&apos;name&apos;);//true
+person.hasOwnProperty(&apos;gender&apos;);//false
+person.hasOwnProperty(&apos;toString&apos;);//false  </code></pre><h4 id="JSON与Object转换"><a href="#JSON与Object转换" class="headerlink" title="JSON与Object转换"></a>JSON与Object转换</h4><p>1.JSON.parse()：JSON 格式 =&gt; JavaScript 对象  </p>
+<pre><code>// 一个 JSON 字符串
+const jsonStr =
+  &apos;{&quot;sites&quot;:[{&quot;name&quot;:&quot;Runoob&quot;, &quot;url&quot;:&quot;www.runoob.com&quot;},{&quot;name&quot;:&quot;Google&quot;, &quot;url&quot;:&quot;www.google.com&quot;},{&quot;name&quot;:&quot;Taobao&quot;, &quot;url&quot;:&quot;www.taobao.com&quot;}]}&apos;;
+
+// 转成 JavaScript 对象
+const obj = JSON.parse(jsonStr);</code></pre><p>2.JSON.stringify()：JavaScript 对象 =&gt; JSON 格式<br>现在我们把上面得到的 obj 转成 JSON 格式：  </p>
+<pre><code>const jsonStr2 = JSON.stringify(obj)；</code></pre><h3 id="内置对象——Math、Storage"><a href="#内置对象——Math、Storage" class="headerlink" title="内置对象——Math、Storage"></a>内置对象——Math、Storage</h3><h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><h4 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h4><p>1.数据存入：setItem(key,value)  </p>
+<pre><code>window.localStorage.setItem(&apos;myLocalStorage&apos;, &apos;storage Value&apos;);</code></pre><p>2.读取数据：getItem(key)  </p>
+<pre><code>window.localStorage.getItem(&apos;myLocalStorage&apos;);  </code></pre><p>3.清除缓存：clear()  </p>
+<pre><code>window.localStorage.clear();  </code></pre><h3 id="内置对象——String"><a href="#内置对象——String" class="headerlink" title="内置对象——String"></a>内置对象——String</h3><p>1.str.length  //返回字符串长度<br>2.str.indexOf(sub)  //返回子字符串 sub 的开始下标，不存在则返回 -1 注意：这里的参数 sub 是个字符串变量  str<br>3.str.trim()  //字符串前后去空格<br>4.str.substring(s,e)  //截取下标从 s 到 e 的子字符串 注意：这里的参数 s 和 e 是个数字变量<br>5.str.substr(s,len)  //截取下标从 s 开始，长度为 len 的子字符串 注意：这里的参数 s 和 len 是个数字变量<br>6.str.split(pattern)  //按规格 pattern 分割字符串 注意：这里的参数 pattern 是个字符串变量  </p>
+<h3 id="内置对象——Array"><a href="#内置对象——Array" class="headerlink" title="内置对象——Array"></a>内置对象——Array</h3><p>1.arr.join(pattern)  //按规则 pattern 连接数组，返回字符串<br>2.arr.reverse()  //将原数组倒序排列<br>3.arr.sort(func)  //自定义排序，根据传入的参数函数 func 将数组成员排序<br>4.arr.map(func)  //根据传入的参数函数 func 对数组进行遍历操作，返回操作后的数组 函数有三个参数，依次为：数组成员、对应下标、整个数组<br>5.arr.forEach(func)  //根据传入的参数函数 func 对数组进行遍历操作，无返回值 函数有三个参数，依次为：数组成员、对应下标、整个数组  </p>
+<h3 id="内置对象Date"><a href="#内置对象Date" class="headerlink" title="内置对象Date"></a>内置对象Date</h3><h4 id="获取当前时间：new-Date"><a href="#获取当前时间：new-Date" class="headerlink" title="获取当前时间：new Date()"></a>获取当前时间：new Date()</h4><pre><code>let now = new Date();
+console.log(now);  </code></pre><p>如果给构造函数传入一些参数的话，就能够生成特定的时间对象了，这里可以传入数字、字符串、毫秒数：  </p>
+<pre><code>// 传入表示“年月日时分秒”的数字
+let dt1 = new Date(2020, 0, 6, 0, 0, 0);
+console.log(dt1);
+
+// 传入日期字符串
+let dt2 = new Date(&apos;2020-1-6&apos;);
+console.log(dt2);
+
+// 传入距离国际标准时间的毫秒数
+let dt3 = new Date(1578240000000);
+console.log(dt3);  </code></pre><h4 id="日期计算"><a href="#日期计算" class="headerlink" title="日期计算"></a>日期计算</h4><p>1.时间差：毫秒数<br>2.早晚比较：大小于符号  </p>
+<h4 id="解析日期字符串：Date-parse"><a href="#解析日期字符串：Date-parse" class="headerlink" title="解析日期字符串：Date.parse()"></a>解析日期字符串：Date.parse()</h4><p>Date.parse 方法用来解析日期字符串，返回该时间距离时间零点（1970 年 1 月 1 日 00:00:00）的毫秒数：  </p>
+<pre><code>let dt = Date.parse(&apos;2020-1-6&apos;);
+console.log(dt); // 1578240000000  </code></pre><h4 id="时间对象转时间字符串：to方法"><a href="#时间对象转时间字符串：to方法" class="headerlink" title="时间对象转时间字符串：to方法"></a>时间对象转时间字符串：to方法</h4><pre><code>let dt = new Date();
+let dtStr = dt.toJSON();
+
+console.log(dtStr); // 2020-01-03T09:44:18.220Z</code></pre><h4 id="获取时间的年月日：get方法"><a href="#获取时间的年月日：get方法" class="headerlink" title="获取时间的年月日：get方法"></a>获取时间的年月日：get方法</h4><pre><code>let dt = new Date();
+dt.getTime(); // 返回实例距离1970年1月1日00:00:00的毫秒数。
+dt.getDate(); // 返回实例对象对应每个月的几号（从1开始）。
+dt.getDay(); // 返回星期几，星期日为0，星期一为1，以此类推。
+dt.getFullYear(); // 返回四位的年份。
+dt.getMonth(); // 返回月份（0表示1月，11表示12月）。
+dt.getHours(); // 返回小时（0-23）。
+dt.getMilliseconds(); // 返回毫秒（0-999）。
+dt.getMinutes(); // 返回分钟（0-59）。
+dt.getSeconds(); // 返回秒（0-59）。</code></pre><h4 id="设置时间对象的年月日：set方法"><a href="#设置时间对象的年月日：set方法" class="headerlink" title="设置时间对象的年月日：set方法"></a>设置时间对象的年月日：set方法</h4><pre><code>let dt = new Date();
+dt.setTime(ms); // 设置实例距离1970年1月1日00:00:00的毫秒数。
+dt.setDate(date); // 设置实例对象对应每个月的几号（从1开始）。
+dt.setFullYear(year); // 设置四位的年份。
+dt.setMonth(month); // 设置月份（0表示1月，11表示12月）。
+dt.setHours(hour); // 设置小时（0-23）。
+dt.setMilliseconds(ms); // 设置毫秒（0-999）。
+dt.setMinutes(min); // 设置分钟（0-59）。
+dt.setSeconds(sec); // 设置秒（0-59）。</code></pre>
+    </div>
+
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+        -------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------
+        </div>
+    
+</div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>优秀的人
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/08/14/JavaScript%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6/" title="JavaScript对象和事件">http://yoursite.com/2020/08/14/JavaScript对象和事件/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/" rel="prev" title="JavaScript基础数据操作">
+      <i class="fa fa-chevron-left"></i> JavaScript基础数据操作
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象概念"><span class="nav-number">1.1.</span> <span class="nav-text">对象概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义对象的属性操作"><span class="nav-number">1.2.</span> <span class="nav-text">自定义对象的属性操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性读取"><span class="nav-number">1.2.1.</span> <span class="nav-text">属性读取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性赋值"><span class="nav-number">1.2.2.</span> <span class="nav-text">属性赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性查看"><span class="nav-number">1.2.3.</span> <span class="nav-text">属性查看</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性删除和增加"><span class="nav-number">1.2.4.</span> <span class="nav-text">属性删除和增加</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历对象属性"><span class="nav-number">1.3.</span> <span class="nav-text">遍历对象属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in遍历"><span class="nav-number">1.3.1.</span> <span class="nav-text">for…in遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#借助Object-keys遍历"><span class="nav-number">1.3.2.</span> <span class="nav-text">借助Object.keys遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的继承"><span class="nav-number">1.4.</span> <span class="nav-text">对象的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性是否存在：in"><span class="nav-number">1.4.1.</span> <span class="nav-text">属性是否存在：in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自身属性是否存在：hasOwnProperty"><span class="nav-number">1.4.2.</span> <span class="nav-text">自身属性是否存在：hasOwnProperty</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON与Object转换"><span class="nav-number">1.4.3.</span> <span class="nav-text">JSON与Object转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置对象——Math、Storage"><span class="nav-number">1.5.</span> <span class="nav-text">内置对象——Math、Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math"><span class="nav-number">1.5.1.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Storage"><span class="nav-number">1.5.2.</span> <span class="nav-text">Storage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置对象——String"><span class="nav-number">1.6.</span> <span class="nav-text">内置对象——String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置对象——Array"><span class="nav-number">1.7.</span> <span class="nav-text">内置对象——Array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置对象Date"><span class="nav-number">1.8.</span> <span class="nav-text">内置对象Date</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前时间：new-Date"><span class="nav-number">1.8.1.</span> <span class="nav-text">获取当前时间：new Date()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#日期计算"><span class="nav-number">1.8.2.</span> <span class="nav-text">日期计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解析日期字符串：Date-parse"><span class="nav-number">1.8.3.</span> <span class="nav-text">解析日期字符串：Date.parse()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间对象转时间字符串：to方法"><span class="nav-number">1.8.4.</span> <span class="nav-text">时间对象转时间字符串：to方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取时间的年月日：get方法"><span class="nav-number">1.8.5.</span> <span class="nav-text">获取时间的年月日：get方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置时间对象的年月日：set方法"><span class="nav-number">1.8.6.</span> <span class="nav-text">设置时间对象的年月日：set方法</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="优秀的人"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">优秀的人</p>
+  <div class="site-description" itemprop="description">日常学习记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li></ul>
+        </canvas>
+    </div>
+</div>
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">优秀的人</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">21k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">19 分钟</span>
+</div>
+
+    <!-- 网站运行时间的设置 -->
+    <span id="timeDate">载入天数...</span>
+    <span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+    <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("01/05/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()",250);
+    </script>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'ME8PzKhsTY1BoXzzqxER9HkV-gzGzoHsz',
+      appKey     : 'NmruStj4hM3eBMIiNfyYvJvk',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":70,"height":120},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+    <!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/js/clicklove.js"></script>
