@@ -14,10 +14,13 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="日常学习记录">
@@ -116,9 +119,19 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -162,6 +175,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -178,7 +192,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -206,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:29:47" itemprop="dateModified" datetime="2020-08-13T10:29:47+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-14 14:37:56" itemprop="dateModified" datetime="2020-08-14T14:37:56+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,146 +275,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><h3 id="let定义变量"><a href="#let定义变量" class="headerlink" title="let定义变量"></a>let定义变量</h3><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/%E5%8F%98%E9%87%8F%E8%A7%A3%E9%87%8A.png" alt=""></p>
-<h3 id="const定义变量"><a href="#const定义变量" class="headerlink" title="const定义变量"></a>const定义变量</h3><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/1/2j/const.png" alt=""></p>
-<h3 id="let和const差别"><a href="#let和const差别" class="headerlink" title="let和const差别"></a>let和const差别</h3><p>差别一：let定义的变量可以被多次重新赋值<br>const定义的变量只能赋值一次  </p>
-<pre><code>let name = &apos;Bob&apos;;
-console.log(name); // Bob
-name = &apos;Tom&apos;;
-console.log(name); // Tom  
-
-const name = &apos;Bob&apos;;
-console.log(name); // Bob
-name = &apos;Tom&apos;; // 报错
-console.log(name); // 不执行</code></pre><p>差别二：let定义变量的时候，可以不赋初始值<br><strong><em>const定义变量的时候，要赋初始值，否则会报错</em></strong>  </p>
-<p><code>let age;  
-console.log(age); // undefined</code>  </p>
-<p><code>const age; // 报错  
-console.log(age);  // 不执行</code></p>
-<h2 id="数值类型（主要包括：整数-浮点数和NaN非数值）"><a href="#数值类型（主要包括：整数-浮点数和NaN非数值）" class="headerlink" title="数值类型（主要包括：整数,浮点数和NaN非数值）"></a>数值类型（主要包括：整数,浮点数和NaN非数值）</h2><h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><h4 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h4><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%85%AB%E8%BF%9B%E5%88%B6.png" alt=""></p>
-<h4 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h4><p><img src="https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-4-HTML-CSS/2/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6.png" alt=""></p>
-<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>浮点数值必须包含一个小数点，并且小数点后面至少有一位数字.小数点前面可以没有数字，但是不推荐这种写法。 </p>
-<pre><code>let floatNumber1 = 2.0;
-let floatNumber2 = 0.4;
-let floatNumber3 = .2; // 正确，但是不推荐  </code></pre><p><strong><em>精度丢失</em></strong><br>例如0.1加0.2结果不是0.3  </p>
-<pre><code>let number1 = 0.1;
-let number2 = 0.2;
-console.log(number1 + number2); // 0.30000000000000004`</code></pre><p>因此<strong><em>不要使用</em></strong>下面这种判断<br><code>if (a + b == 0.3) {
-  console.log(&#39;输出成功&#39;);
-}</code></p>
-<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>就是两个变量执行了一个运算，例如+、-、*、/当中的一种，返回的结果仍然是数字类型，但是执行的数学运算没有成功。  </p>
-<pre><code>let a = &apos;number&apos;;  
-let b = 10;  
-let c = a / b;
-console.log(c); // NaN
-console.log(typeof c); // number</code></pre><h2 id="类型转换-字符串模板"><a href="#类型转换-字符串模板" class="headerlink" title="类型转换/字符串模板"></a>类型转换/字符串模板</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><h4 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h4><p>数字字符串加数字,数字隐式转换为字符串  </p>
-<pre><code>console.log(20+&apos;20&apos;); // 2020
-// 调换位置亦可
-console.log(&apos;20&apos;+20); // 2020</code></pre><p>数字字符串与数字做非加法运算,字符串隐式转换为数字  </p>
-<pre><code>console.log(&apos;20&apos;-10); // 10
-console.log(10*&apos;10&apos;); // 100
-console.log(10/&apos;2&apos;); // 5</code></pre><p>数字字符串与数字字符串做非加法运算,隐式转换为数字  </p>
-<pre><code>console.log(&apos;20&apos;-&apos;10&apos;); // 10
-console.log(&apos;20&apos;/&apos;10&apos;); // 2
-console.log(&apos;20&apos;*&apos;10&apos;); // 200</code></pre><h4 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h4><p><strong>1.parseInt</strong><br>整数字符串转换为整数</p>
-<pre><code>let number = &apos;20&apos;;
-//  将number转换为整数类型
-let converNumber = parseInt(number);
-console.log(converNumber); // 20
-// 判断转换后的数据类型
-onsole.log(typeof converNumber); // number</code></pre><p>小数字符串转换为整数  </p>
-<pre><code>let number = &apos;20.5&apos;;
-let converNumber = parseInt(number);
-console.log(converNumber); // 20  不足21一律按照20算
-console.log(typeof converNumber); // number</code></pre><p>小数转换为整数  </p>
-<pre><code>let number = 20.5;
-let converNumber = parseInt(number);
-console.log(converNumber); // 20</code></pre><p><strong>2.parseFloat</strong><br>将小数字符串转换为小数  </p>
-<pre><code>let number = &apos;20.9&apos;;
-let converNumber = parseFloat(number);
-console.log(converNumber); // 20.9
-console.log(typeof converNumber); // number</code></pre><h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h4><p>在一般的字符串中，如果我们要将字符串和变量拼接起来，要用加号（+）去拼接，例如：  </p>
-<pre><code>let firstName = &apos;胡&apos;;
-let lastName = &apos;雪岩&apos;;
-let say = &apos;大家好，我姓&apos; + firstName + &apos;，名&apos; + lastName;
-console.log(say);</code></pre><p>可以看的出，这个写法非常的繁琐，模版字符串就可以简化书写，模版字符串的核心是反引号（``）和 占位符<code>${expression}</code>，反引号的作用是将字符串和变量包起来，占位符的作用就是在字符串中插入变量，比如上面的代码我们可以使用模版字符串来进行改造：  </p>
-<pre><code>let firstName = &apos;胡&apos;;
-let lastName = &apos;雪岩&apos;;
-let say = `大家好，我姓${firstName}，名${lastName}`;
-console.log(say);</code></pre><h4 id="转义符（-）的使用"><a href="#转义符（-）的使用" class="headerlink" title="转义符（\）的使用"></a>转义符（\）的使用</h4><p>转义符在模版字符串和一般的字符串中都很常见，比如说我们要写下面这段代码：  </p>
-<pre><code>let str = &quot;华为正式发布操作系统---&quot;鸿蒙OS&quot;&quot;;//报错
-onsole.log(str);   </code></pre><p>这样的写法是错误的，但是我们就想在双引号里面写双引号，怎么办呢？这里就要用到转义符（\），在前后双引号前面添加一个转义符（\），代码如下：</p>
-<pre><code>let str = &quot;华为正式发布操作系统---\&quot;鸿蒙OS\&quot;&quot;;
-onsole.log(str);</code></pre><h4 id="模版字符串中使用三元表达式"><a href="#模版字符串中使用三元表达式" class="headerlink" title="模版字符串中使用三元表达式"></a>模版字符串中使用三元表达式</h4><p>这里我们就不去管字符串拼接的表达式了，直接使用模版字符串来写三元表达式，先写一个最简单的：  </p>
-<pre><code>let str = `这里是${false ? &apos;浙江&apos; : &apos;江苏&apos;}`;
-console.log(str); // 江苏</code></pre><p>加大难度：  </p>
-<pre><code>let str = `这里是${false ? &apos;浙江&apos; : `江苏-${true ? &apos;南京&apos; : &apos;常州&apos;}`}`;
-console.log(str); // 这里是江苏-南京</code></pre><p>实例使用：<br>js 代码中组装 HTML 代码，然后显示在屏幕中：  </p>
-<pre><code>let htmlCode = `
-&lt;p&gt;&lt;/p&gt;
-${
-  true
-    ? `&lt;img src=&apos;https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&amp;fm=26&amp;gp=0.jpg&apos; /&gt;`
-    : `&lt;img src=&apos;&apos; /&gt;`
-}
-`;
-console.log(htmlCode);
-// &lt;p&gt;&lt;/p&gt;
-//    &lt;img src=&apos;https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&amp;fm=26&amp;gp=0.jpg&apos; /&gt;</code></pre><h2 id="运算符（相等-全等）"><a href="#运算符（相等-全等）" class="headerlink" title="运算符（相等/全等）"></a>运算符（相等/全等）</h2><p>判断两个值是否相同,这时候就要用到相等(==)和全等(===)运算符,这两个运算符的区别是前者只判断值是否相同,后者在此基础上还要判断类型是否相同。<br>代码比较：<br>相等（==）代码：</p>
-<pre><code>let number1 = &apos;45&apos;;
-let number2 = 45;
-console.log(number1 == number2); // true</code></pre><p>全等（===）代码：  </p>
-<pre><code>let number1 = &apos;45&apos;;
-let number2 = 45;
-console.log(number1 === number2); // false</code></pre><p><strong><em>注：由于相等错在类型转换问题,为了保持代码中数据类型的完整性,推荐使用全等</em></strong></p>
-<h2 id="数组操作（增-删-改-查）"><a href="#数组操作（增-删-改-查）" class="headerlink" title="数组操作（增/删/改/查）"></a>数组操作（增/删/改/查）</h2><h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><h4 id="push方法（从尾加）"><a href="#push方法（从尾加）" class="headerlink" title="push方法（从尾加）"></a>push方法（从尾加）</h4><p>使用方法：<br><code>变量名.push(&#39;要添加的值&#39;);</code><br>例如：  </p>
-<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
-// 在末尾添加“河海大学”
-schools.push(&apos;河海大学&apos;);
-console.log(schools); // 清华大学&apos;,&apos;北京大学&apos;,&apos;浙江大学&apos;,&apos;同济大学&apos;,&apos;河海大学&apos;</code></pre><p>要添加多个值可以合并写，例如：  </p>
-<pre><code>chools.push(&apos;河海大学&apos;);
-schools.push(&apos;大连理工大学&apos;);
-schools.push(&apos;哈尔滨工业大学&apos;);
-
-// 上述三步操作可以一次性完成
-schools.push(&apos;河海大学&apos;, &apos;大连理工大学&apos;, &apos;哈尔滨工业大学&apos;);</code></pre><h4 id="unshift方法（从头加）"><a href="#unshift方法（从头加）" class="headerlink" title="unshift方法（从头加）"></a>unshift方法（从头加）</h4><p>和push方法用法一样</p>
-<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><h4 id="pop方法（从后往前删除）"><a href="#pop方法（从后往前删除）" class="headerlink" title="pop方法（从后往前删除）"></a>pop方法（从后往前删除）</h4><p><code>pop</code>方法对应的是<code>push</code>方法,表示从后往前删除,例如：  </p>
-<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
-
-// 在末尾添加“河海大学”
-schools.push(&apos;河海大学&apos;);
-console.log(schools); // 清华大学&apos;,&apos;北京大学&apos;,&apos;浙江大学&apos;,&apos;同济大学&apos;,&apos;河海大学&apos;
-
-// 从末尾删除一个元素
-schools.pop();
-console.log(schools); // 清华大学&apos;,&apos;北京大学&apos;,&apos;浙江大学&apos;,&apos;同济大学&apos;</code></pre><h4 id="shift方法（从前往后删除）"><a href="#shift方法（从前往后删除）" class="headerlink" title="shift方法（从前往后删除）"></a>shift方法（从前往后删除）</h4><p>和pop方法用法一样</p>
-<h3 id="改（可实现增加和删除）"><a href="#改（可实现增加和删除）" class="headerlink" title="改（可实现增加和删除）"></a>改（可实现增加和删除）</h3><h4 id="splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除"><a href="#splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除" class="headerlink" title="splice方法（修改指定位置元素）可以实现指定位置元素的增加、删除"></a>splice方法（修改指定位置元素）<em>可以实现指定位置元素的增加、删除</em></h4><p><code>变量名.splice(参数一，参数二，参数三);</code><br>splice 方法难理解一点,splice方法括号里需要添加三个值(也叫参数).分别代表三个意思,先来解释一下这三个值：<br>1.参数一,整数类型,表示起始位置<br>2.参数二（<strong>可省略</strong>）,整数类型,表示步长(往后选几个元素,1 代表往后选 1 个元素)<br>3.参数三（<strong>可省略</strong>）,要替换的数组的值  </p>
-<h4 id="一个参数"><a href="#一个参数" class="headerlink" title="一个参数"></a>一个参数</h4><p>表示删除从指定位置开始到结束位置的所有元素,并返回被删除的元素  </p>
-<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
-// 删除从下标为1的位置到结束位置的值
-let deleteSchools = schools.splice(1);
-// 删除之后，原数组中的剩余内容
-console.log(schools); // [&quot;清华大学&quot;]
-// 删除的内容
-console.log(deleteSchools); // [&quot;北京大学&quot;, &quot;浙江大学&quot;, &quot;同济大学&quot;]</code></pre><h4 id="两个参数"><a href="#两个参数" class="headerlink" title="两个参数"></a>两个参数</h4><p>表示删除从参数一位置开始，往后走参数二步的所有元素,并返回被删除的元素  </p>
-<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
-// 从下标为0开始,往后数两个元素,删除
-let deleteSchools = schools.splice(0, 2);
-console.log(schools); // [&apos;浙江大学&apos;, &apos;同济大学&apos;]
-onsole.log(deleteSchools); // [&apos;清华大学&apos;, &apos;北京大学&apos;]</code></pre><h4 id="三个参数"><a href="#三个参数" class="headerlink" title="三个参数"></a>三个参数</h4><p>案例1：实现增加（参数二为0）  </p>
-<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
-schools.splice(2, 0, &apos;江西理工大学&apos;);
-console.log(schools); //  [&quot;清华大学&quot;, &quot;北京大学&quot;, &quot;江西理工大学&quot;, &quot;浙江大学&quot;, &quot;同济大学&quot;]</code></pre><p>案例2：替换（参数二不为0）  </p>
-<pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
-schools.splice(2, 2, &apos;江西理工大学&apos;);
-console.log(schools); // [&quot;清华大学&quot;, &quot;北京大学&quot;, &quot;江西理工大学&quot;]</code></pre><h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><h4 id="indexOf方法"><a href="#indexOf方法" class="headerlink" title="indexOf方法"></a>indexOf方法</h4><p><code>变量名.indexOf(参数一，参数二);</code><br><code>indexOf()</code>括号内可以写两个参数,不过我们常用的是添加一个参数的情况,大家重点关注一个参数的情况即可<br>1.参数一，要查找的目标<br>2.参数二（<strong>可省略</strong>），查找的起始位置</p>
-<h4 id="一个参数-1"><a href="#一个参数-1" class="headerlink" title="一个参数"></a>一个参数</h4><pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
-let result = schools.indexOf(&apos;大连理工&apos;);
-console.log(result); // -1</code></pre><p><strong><em>注：返回值是-1表示未找到,非-1数字表示找到的元素的下标</em></strong></p>
-<h4 id="两个参数-1"><a href="#两个参数-1" class="headerlink" title="两个参数"></a>两个参数</h4><pre><code>let schools = [&apos;清华大学&apos;, &apos;北京大学&apos;, &apos;浙江大学&apos;, &apos;同济大学&apos;];
-let result = schools.indexOf(&apos;浙江大学&apos;, 3);
-console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从下标为 3 的位置（同济大学）开始寻找的，所以找不到，返回-1。</em></strong></p>
-
+          <h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/12/JavaScript%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -422,7 +305,7 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -450,7 +333,7 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:34:44" itemprop="dateModified" datetime="2020-08-13T10:34:44+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-14 14:39:46" itemprop="dateModified" datetime="2020-08-14T14:39:46+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -505,85 +388,15 @@ console.log(result); // -1</code></pre><p><strong><em>注：因为我们是从�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><h3 id="排序规则"><a href="#排序规则" class="headerlink" title="排序规则"></a>排序规则</h3><p>1.指向数组中两个相邻的元素（最开始是数组的头两个元素），并且比较他们的大小。<br>2.如果前者比后者大，则交换他们的位置。<br>3.如果后者比前者大，则不交换。<br>4.然后依次后移，每次循环将最大元素移动最后一个位置  </p>
-<h3 id="java代码实现"><a href="#java代码实现" class="headerlink" title="java代码实现"></a>java代码实现</h3><pre><code>// 冒泡排序  
-public static void bubbleSort(int[] array) {  
-// 1. 每次循环，都能冒泡出剩余元素中最大的元素，因此需要循环 array.length 次  
-for (int i = 0; i &lt; array.length; i++) {  
-// 2. 每次遍历，只需要遍历 0 到 array.length - i - 1中元素，因此之后的元素都已经是最大的了  
-for (int j = 0; j &lt; array.length - i - 1; j++) {  
-//3. 交换元素  
-if (array[j] &gt; array[j + 1]) {  
-int temp = array[j + 1];  
-array[j + 1] = array[j];  
-array[j] = temp;  
-}  
-}  
-}  
-}  </code></pre><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="排序规则-1"><a href="#排序规则-1" class="headerlink" title="排序规则"></a>排序规则</h3><p>1.利用两个变量，一个存储当前最大值，一个存储当前最大值所在的索引。<br>2.依次比较后面的元素，如果发现比当前最大值大，则更新最大值，并且更新最大值所在的索引。<br>3.直到遍历结束，将最大值放在数组的最右边，也就是交换最右边元素和当前最大值元素。<br>4.重复上面的步骤  </p>
-<h3 id="java代码实现-1"><a href="#java代码实现-1" class="headerlink" title="java代码实现"></a>java代码实现</h3><p>// 选择排序<br>  public static void selectSort(int[] array) {</p>
-<pre><code>for(int i=0;i&lt;array.length;i++){
-  int max = 0;
-  for(int j=0;j&lt;array.length-i-1;j++){
-    if(array[j+1]&gt;array[max]){
-      max = j+1;
-    }
-
-  }
-  int temp = array[array.length-i-1];
-      array[array.length-i-1] = array[max];
-      array[max] = temp;
-}</code></pre><p>  }</p>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="排序规则-2"><a href="#排序规则-2" class="headerlink" title="排序规则"></a>排序规则</h3><p>1.在第一轮，抽离数组末尾倒数第二个元素，作为临时元素。<br>2.用临时元素与数组后面的元素进行对比，如果后面的元素值小于临时元素，则左移。<br>3.如果后面的元素大于临时元素，或者已经移动到数组末尾，则将临时元素插入当前的空隙中。<br>4.重复上面步骤，完成排序。</p>
-<h3 id="java代码实现-2"><a href="#java代码实现-2" class="headerlink" title="java代码实现"></a>java代码实现</h3><p>// 插入排序<br>  public static void insertSort(int[] array) {  </p>
-<pre><code>int temp = 0;
-for(int i =1;i&lt;array.length;i++){
-  for(int j=array.length-i-1;j&lt;array.length-1;j++){
-    if(array[j]&gt;array[j+1]){
-      temp = array[j];
-      array[j] = array[j+1];
-      array[j+1] = temp;
-    }
-  } 
-}</code></pre><p>  }</p>
-<h2 id="二分插入排序"><a href="#二分插入排序" class="headerlink" title="二分插入排序"></a>二分插入排序</h2><h3 id="排序规则-3"><a href="#排序规则-3" class="headerlink" title="排序规则"></a>排序规则</h3><p>1.在第一轮，抽离数组末尾倒数第二个元素，作为临时元素。<br>2.查找应该插入的临时元素位置。<br>3.将插入位置前的元素左移，然后将抽离的元素插入；<br>4.重复上面步骤，完成排序。  </p>
-<h3 id="java代码实现-3"><a href="#java代码实现-3" class="headerlink" title="java代码实现"></a>java代码实现</h3><p>二分法查找插入位置：</p>
-<pre><code>// 查找应该插入的索引位置  
-public static int searchIndex(int[] array, int left, int right, int aim) {  
-// 循环查找节点位置  
-while (left &lt; right) {  
-int middle = (left + right) / 2;  
-int value = array[middle];  
-if (value &lt; aim) {  
-left = middle + 1;  
-} else {   
-right = middle - 1;  
-}  
-}  
-// #1. 如果最终元素仍然大于目标元素，则将索引位置往左边移动一个  
-if(array[left] &gt; aim){  
-return left -1;  
-}  
-// 否则就是当前位置  
-return left;  
-}</code></pre><p>插入排序：  </p>
-<pre><code>// 插入排序
-public static void insertSort(int[] array) {
-// 从倒数第二位开始，遍历到底0位，遍历 N-1 次
-for (int i = array.length - 2; i &gt;= 0; i--) {
-// 存储当前抽离的元素
-int temp = array[i];
-int index = searchIndex(array, i + 1, array.length - 1, temp);
-
-// #1. 根据插入的索引位置，进行数组的移动和插入
-int j = i + 1;
-while (j &lt;= index) {
-array[j - 1] = array[j];
-j++;
-}
-array[j - 1] = temp;
-}
-}</code></pre>
+          <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -605,7 +418,7 @@ array[j - 1] = temp;
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E6%8E%A5%E5%8F%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -633,7 +446,7 @@ array[j - 1] = temp;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:34:02" itemprop="dateModified" datetime="2020-08-13T10:34:02+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-14 14:39:01" itemprop="dateModified" datetime="2020-08-14T14:39:01+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -688,87 +501,15 @@ array[j - 1] = temp;
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="接口的语法"><a href="#接口的语法" class="headerlink" title="接口的语法"></a>接口的语法</h2><p>  public interface LoginService{<br>  String getLogin();<br>  }<br><strong>注：接口的方法默认不需要方法体（大括号就不需要啦）</strong>  </p>
-<p>UML接口的定义：<br><img src="https://style.youkeda.com/img/ham/course/j2/RoleService.svg" alt=""><br>如上图，这个图标指的就是接口（interface）：<br><img src="https://style.youkeda.com/img/ham/course/j2/interface.png" alt=""></p>
-<h2 id="接口实现类"><a href="#接口实现类" class="headerlink" title="接口实现类"></a>接口实现类</h2><p><img src="https://style.youkeda.com/img/ham/course/j2/implements.svg" alt=""><br><strong>注：1.接口定义的方法在实现类里必须要全部实现了，而且方法签名要一模一样（同样的方法名称、方法参数、方法返回值）<br>2.由于接口定义的方法都是 public 的，所以实现类的方法控制修饰符也必须是public</strong>  </p>
-<h3 id="一个类实现多个接口"><a href="#一个类实现多个接口" class="headerlink" title="一个类实现多个接口"></a>一个类实现多个接口</h3><pre><code>package com.youkeda.service.impl;
-
-import com.youkeda.service.RoleService;
-import com.youkeda.service.EchoService;
-
-public class RoleServiceImpl 
- implements RoleService,EchoService{
-
-public void addRole(Role role){
-
-}
-
-public ArrayList&lt;Role&gt; getRoles(){
-return null;
-}
-
-public void echo(){
-
-}
-
-}</code></pre><h3 id="实例化接口"><a href="#实例化接口" class="headerlink" title="实例化接口"></a>实例化接口</h3><p>接口是不能单独实例化的，因为接口只是定义，没有具体的实现是不允许实例化的。<br>所以 <code>EchoService echo = new EchoService();</code> 这个语法是错误的<br>正确的实例化是结合实现类的：  </p>
-<pre><code>package com.youkeda.test;
-
-import com.youkeda.service.RoleService;
-import com.youkeda.service.impl.RoleServiceImpl;
-
-/**
- * RoleServiceTest
- */
-public class RoleServiceTest {
-
-  public static void main(String[] args) {
-
-RoleService roleService = new RoleServiceImpl();
-
-
-  }
-}</code></pre><p>由于 RoleServiceImpl 类同时实现了 EchoService，所以实例也可以被转化为 EchoService。  </p>
-<pre><code>package com.youkeda.test;
-
-import com.youkeda.service.RoleService;
-import com.youkeda.service.impl.RoleServiceImpl;
-
-/**
- * RoleServiceTest
- */
-public class RoleServiceTest {
-
-  public static void main(String[] args) {
-
-RoleService roleService = new RoleServiceImpl();
-
-// 类型转化：把 roleService 实例转化为 EchoService 接口类型
-EchoService echoService = (EchoService)roleService;
-
-  }
-}</code></pre><h3 id="UML接口实现图"><a href="#UML接口实现图" class="headerlink" title="UML接口实现图"></a>UML接口实现图</h3><p><img src="https://style.youkeda.com/img/ham/course/j2/RoleService1.svg" alt=""><br>如上图，代表着 RoleServiceImpl 实现了 RoleService 接口<br><strong>注：补充说明一点：一般实现类的包名在 service 包下并且命名为 impl，同样实现类的命名规则是 XxxServiceImpl,也就是后缀是 <code>ServiceImpl</code>,如我们这个<code>com.youkeda.service.impl.RoleServiceImpl</code>实现类</strong></p>
-<h2 id="java常用接口"><a href="#java常用接口" class="headerlink" title="java常用接口"></a>java常用接口</h2><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p><img src="https://style.youkeda.com/img/ham/course/j2/java-map1.png" alt=""><br>如上图，Map（映射）是遵循 key:value 这样的形式的集合。key、value 的类型可以是任何的 Java 对象。  </p>
-<p>我们大部分的情况下，都会使用 HashMap 这个 Map 的实现类。所以如果想得到一个 Map 的实例的话可以使用 HashMap</p>
-<pre><code>import java.util.Map;
-import java.util.HashMap;
-
-// key value 得是 Java 类型
-Map&lt;key,value&gt; map = new HashMap&lt;&gt;();  </code></pre><p><code>map.put(key,value)</code>//数据存储<br> <code>map.get(key)</code>//获取数据<br><code>map.size()</code>//获得map尺寸</p>
-<p>map遍历：  </p>
-<pre><code>for (Map.Entry&lt;Integer,String&gt; entry : map.entrySet()){ 
-
-  System.out.println(&quot;Key = &quot; + entry.getKey() + 
- &quot;, Value = &quot; + entry.getValue());
-}</code></pre><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List是 ArrayList 的接口，所以用法和 ArrayList 没有太大差别，支持同一类型数据的集合存储  </p>
-<p>比如说存储字符串集合：<code>List&lt;String&gt; strings = new ArrayList&lt;&gt;();</code><br>因为 List 和 ArrayList 运用是相同的，我们就不多讲了。额外介绍一下另外一种遍历方式:</p>
-<pre><code>List&lt;String&gt; strings = new ArrayList&lt;&gt;();
-
-for(String str : strings){
-System.out.println(str);
-}  </code></pre><p>这个for循环语法适用于不关心数组坐标值的场景，简化版的for语句  </p>
-<p><strong>注：请大家注意一下，在面向对象的设计中，我们一般都采用 Map、List 作为集合数据的类型，因为这个符合接口开发的规范，我们习惯如此</strong>。</p>
-
+          <h2 id="接口的语法"><a href="#接口的语法" class="headerlink" title="接口的语法"></a>接口的语法</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/17/%E6%8E%A5%E5%8F%A3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -790,7 +531,7 @@ System.out.println(str);
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E7%BB%A7%E6%89%BF%E5%92%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -818,7 +559,7 @@ System.out.println(str);
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:34:02" itemprop="dateModified" datetime="2020-08-13T10:34:02+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-14 14:39:01" itemprop="dateModified" datetime="2020-08-14T14:39:01+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -873,99 +614,15 @@ System.out.println(str);
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="继承语法"><a href="#继承语法" class="headerlink" title="继承语法"></a>继承语法</h2><p>Animal.java  </p>
-<pre><code>package com.youkeda.model;  
-
-public class Animal {
-
-private String name;
-
-private int age;
-
-public void eat(){
-    System.out.println(&quot;动物爱吃东西&quot;);
-}
-
-public String getName() {
-    return name;
-}
-
-public void setName(String name) {
-    this.name = name;
-}
-
-public int getAge() {
-    return age;
-}
-
-public void setAge(int age) {
-    this.age = age;
-}
-}  </code></pre><p>Dog.java</p>
-<pre><code>package com.youkeda.model;
-
-public class Dog extends Animal{
-
-}</code></pre><h2 id="方法覆盖"><a href="#方法覆盖" class="headerlink" title="方法覆盖"></a>方法覆盖</h2><p>Dog.java</p>
-<pre><code>package com.youkeda.model;
-
-public class Dog extends Animal{
-
-public void eat(){
-System.out.println(&quot;狗狗喜欢吃肉骨头&quot;);
-}
-
-}  </code></pre><p>实例化Dog对象：Dog d1 = new Dog();<br>实例化Animal对象：Animal d2 = new Dog();<br>d2.eat();//调用的是Dog的eat()方法<br><strong>注：子类的对象是可以转化为父类对象，但是父类不能转化为子类。也就是说 <code>Dog dog = new Animal()</code>是错误的</strong></p>
-<h2 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h2><p>父类</p>
-<pre><code>public class CustomFile{  
-  // 存储文件路径的变量  
-  public String filePath;  
-  // 存储文件后缀变量，通过后缀来区分文件类型  
-  public String ext;  
-
-  // 声明一个构造函数，接受文件路径
-  public CustomFile(String filePath){
-//给类变量 filePath 赋值
-//this代表的是当前类的实例
-this.filePath = filePath;
-  }
-
-  /**
-   * 获取文件名称
-   */
-  public String getName(){
-// 比如文件路径是 /Users/mac/work/face.png
-// 把文件路径分隔成数组（分隔符是 / ）
-// 数组的最后一位就是文件名
-String[] paths = filePath.split(&quot;/&quot;);
-// 数组的最后一位需要减1，因为数组是从索引0开始的。
-return  paths[paths.length-1];
-  }
-}</code></pre><p><strong>注：当父类只有一个有参数的构造函数的时候，子类也必须要具备这个构造函数，或者调用 super 方法来实现新的构造函数</strong>。<br>子类一:直接继承  </p>
-<pre><code>public class JavaFile extends CustomFile{
-
-  // 声明一个构造函数
-  public JavaFile(String filePath){
-super(filePath);
-  }
-
-}</code></pre><p>子类二：重新构造</p>
-<pre><code>public class JavaFile extends CustomFile{
-
-  private String packageName;
-
-  // 声明一个构造函数
-  public JavaFile(String filePath,String packageName){
-super(filePath);
-this.packageName = packageName;
-  }
-
-  public String getPackageName(){
-  return this.packageName;
-  }
-
-}</code></pre><p><strong>注：有一点需要注意的是在构造函数里的 super 方法必须写在第一行哦</strong>。</p>
-
+          <h2 id="继承语法"><a href="#继承语法" class="headerlink" title="继承语法"></a>继承语法</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/17/%E7%BB%A7%E6%89%BF%E5%92%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -987,7 +644,7 @@ this.packageName = packageName;
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1015,7 +672,7 @@ this.packageName = packageName;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:33:47" itemprop="dateModified" datetime="2020-08-13T10:33:47+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-14 14:39:25" itemprop="dateModified" datetime="2020-08-14T14:39:25+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1070,63 +727,15 @@ this.packageName = packageName;
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="静态变量（常量）"><a href="#静态变量（常量）" class="headerlink" title="静态变量（常量）"></a>静态变量（常量）</h2><h3 id="两种常量常用场景"><a href="#两种常量常用场景" class="headerlink" title="两种常量常用场景"></a>两种常量常用场景</h3><p>1.常用的字符串值<br>2.需要在内存做缓存的值  </p>
-<h4 id="常用字符串的常量"><a href="#常用字符串的常量" class="headerlink" title="常用字符串的常量"></a>常用字符串的常量</h4><p>不使用常量：  </p>
-<pre><code>public class UserService{  
-  public boolean hasKey(String key){  
-// 不使用常量的时候  
-if(key.equals(&quot;m_key&quot;)){  
-  return true;  
-}  
-return false;  
-  }  
-}  </code></pre><p> 使用常量：</p>
-<pre><code>public class UserService{  
-
-  /**  
-* 用户Session key  
-*/  
-  public static final String USER_KEY = &quot;m_key&quot;;  
-
-  public boolean hasKey(String key){  
-// 使用常量的时候  
-if(key.equals(USER_KEY)){  
-  return true;  
-}  
-return false;  
-  }  
-}  </code></pre><p>对比一下这两个代码，大家想一想，如果代码继续写下去我们可能会多次运用这个 m_key，但是某一天这个m_key变成其他值的时候，是不是每个运用的地方都要单独的去修改？这个时候如果是常量就很简单了，我们只要修改 USER_KEY 的值就完事了，多方便。  </p>
-<h4 id="内存缓存"><a href="#内存缓存" class="headerlink" title="内存缓存"></a>内存缓存</h4><p>补充介绍一下，static 关键字除了声明静态变量外，还可以声明一个静态代码块<strong>（可以在其中执行代码并且调用 static 变量）</strong></p>
-<pre><code>package com.youkeda.service;  
-import com.youkeda.model.School;  
-/**  
- * 学校服务  
- */   
-public class SchoolService{  
-  // 学校数据的常量  
-  public static ArrayList&lt;School&gt; SCHOOLS = newArrayList&lt;&gt;();  
-  // 声明一个静态代码块，用于初始化学校数据  
-static{  
-School school = new School();  
-school.setId(&quot;1&quot;);  
-school.setName(&quot;北京大学&quot;);  
-SCHOOLS.add(school);  
-
-school = new School();  
-school.setId(&quot;2&quot;);  
-school.setName(&quot;清华大学&quot;);  
-SCHOOLS.add(school);  
-  }  
-  public static void main(String[] args){  
-// 测试打印一下内存的数据  
-for(int i=0;i&lt;SCHOOLS.size();i++){  
-  School school = SCHOOLS.get(i);  
-  System.out.println(school.getName());  
-}  
-  }  
-
-}  </code></pre><p><strong>注：static代码块初始数据，添加第2~n个数据也要<code>new School()</code>,不然前面的数据会被最后添加的数覆盖掉</strong><br>这里还有一个关系到 Java 运行的机制，static 的执行顺序是按照代码行数的顺序来执行的，所以要先声明 static 变量后再创建 static。</p>
-
+          <h2 id="静态变量（常量）"><a href="#静态变量（常量）" class="headerlink" title="静态变量（常量）"></a>静态变量（常量）</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/17/%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1148,7 +757,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1168,10 +777,16 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-10 17:37:17 / 修改时间：18:29:27" itemprop="dateCreated datePublished" datetime="2020-07-10T17:37:17+08:00">2020-07-10</time>
+              <time title="创建时间：2020-07-10 17:37:17" itemprop="dateCreated datePublished" datetime="2020-07-10T17:37:17+08:00">2020-07-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-14 14:40:00" itemprop="dateModified" datetime="2020-08-14T14:40:00+08:00">2020-08-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -1221,11 +836,15 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="行为日志"><a href="#行为日志" class="headerlink" title="行为日志"></a>行为日志</h2><h3 id="行为日志的作用"><a href="#行为日志的作用" class="headerlink" title="行为日志的作用"></a>行为日志的作用</h3><p>(1)帮助企业了解用户<br>(2)用于分析和监控系统是否正常<br><strong>注：行为日志是非常重要的，观察和分析行为日志是企业要求的必备的技能</strong>  </p>
-<h3 id="记录用户行为"><a href="#记录用户行为" class="headerlink" title="记录用户行为"></a>记录用户行为</h3><p>记录日志是有特定格式的：用“空格”分隔不同维度的日志内容。相当于，用空格把一条行为日志分成了很多列，每一列代表一种信息。列的前后顺序是基于约定的，每家公司的约定都不一样，甚至每家公司的分隔符也可能不一样，有的公司可能喜欢用逗号（<code>,</code>）分割，有的公司可能喜欢用竖线（<code>|</code>）分割。  </p>
-<h3 id="分析用户行为"><a href="#分析用户行为" class="headerlink" title="分析用户行为"></a>分析用户行为</h3><p>对行为日志文件进行分析，主要用到的是+linux+命令中的文本查找检索命令：<code>grep</code>。<br>(1)简单统计关键字出现次数<br><code>grep -c &#39;11.176.159.95&#39; cookie_log.log</code><br>这个命令的意思是，从<code>cookie_log.log</code>文件中查找（<code>grep</code>）文本+11.176.159.95（单引号中的内容）出现的次数（<code>-c</code>）<br>(2)查看关键字所在的行<br><code>grep &#39;11.176.159.95&#39; cookie_log.log</code><br>(3)复杂统计出现最多的内容<br><code>cat cookie_log.log | awk &#39;{print $8}&#39; | sort | uniq -c | sort -k1r | head -10</code><br>这条命令的意思：读取整个文件的所有记录，只摘取第 8 列（其它的内容丢掉），自动排序，统计相同的数据的次数，按次数倒序再次排序，摘取前 10 条记录。  </p>
-<h3 id="Shell脚本"><a href="#Shell脚本" class="headerlink" title="Shell脚本"></a>Shell脚本</h3><p>(1)脚本开头:<code>#!/bin/bash</code><br>(2)脚本内容：<br><code>#!/bin/bash</code><br><code>if [ -f &#39;cookie_log.log&#39; ]; then</code><br><code>cat cookie_log.log | awk &#39;{print $8}&#39; | sort | uniq -c | sort -k1r | head -10</code><br><code>fi</code><br><code>if [ -f &#39;cookie_log.log&#39; ];</code> 就表示判断+cookie_log+这个文件（<code>-f</code> 参数，<code>f</code> 是 <code>file</code> 的缩写）是否存在，如果存在则执 <code>then...fi</code> 之间的命令。<br>(3)脚本保存：Shell脚本保存成一个文件，文件名称任意起，但通常都已<code>.sh</code>作为后缀结尾。<br>(4)脚本运行：<code>sh top10.sh</code><br><code>sh</code>是个系统命令，表示用<code>sh</code>执行<code>top10.sh</code>这个脚本文件。</p>
-
+          <h2 id="行为日志"><a href="#行为日志" class="headerlink" title="行为日志"></a>行为日志</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/10/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1247,7 +866,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/09/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1275,7 +894,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:26:21" itemprop="dateModified" datetime="2020-08-13T10:26:21+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-14 14:39:01" itemprop="dateModified" datetime="2020-08-14T14:39:01+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1326,8 +945,15 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="本地部署博客："><a href="#本地部署博客：" class="headerlink" title="本地部署博客："></a>本地部署博客：</h2><p>1.本地安装git<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">官网下载</a><br>2.本地配置SSH并绑定到GitHub<a href="https://dongqiang000000.github.io/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener">见其它文章</a><br>3.本地安装node.js<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">官网下载</a><br>4.本地安装Hexo(在<code>git-bate</code>中执行<code>npm install -g hexo-cli</code>)<br>5.clone到本地(<code>git clone -b dev 仓库地址</code>)<br>6.安装node依赖(进入clone的仓库目录输入<code>npm install</code>)</p>
-
+          <h2 id="本地部署博客："><a href="#本地部署博客：" class="headerlink" title="本地部署博客："></a>本地部署博客：</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/09/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1349,7 +975,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/09/hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1377,7 +1003,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:27:45" itemprop="dateModified" datetime="2020-08-13T10:27:45+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-14 14:37:37" itemprop="dateModified" datetime="2020-08-14T14:37:37+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1428,12 +1054,15 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p><code>hexo init blog</code>创建博客文件夹<br>进入blog文件夹输入：<br><code>npm install hexo-deployer-git --save</code>安装发布工具<br>在<code>_config.yml</code>文件中最底部修改配置文件：<br> theme: landscape<br> deploy:<br>   type: git<br>   repository: 你的GitHub仓库地址<br>   branch: master  </p>
-<h3 id="hexo提交"><a href="#hexo提交" class="headerlink" title="hexo提交"></a>hexo提交</h3><p><code>hexo clean</code>清除缓存<br><code>hexo g</code>生成静态文件<br><code>hexo d</code>把生成的文件部署到博客  </p>
-<h3 id="Hexo-发布新博客"><a href="#Hexo-发布新博客" class="headerlink" title="Hexo 发布新博客"></a>Hexo 发布新博客</h3><p><code>hexo new 博客名</code>创建新的.md文件</p>
-<p>注：创建的md文件存放在我们博客文件夹下<code>source/_posts</code>文件夹内，因此我们可以找到这个文件并编辑内容。</p>
-<h3 id="Hexo更换主题"><a href="#Hexo更换主题" class="headerlink" title="Hexo更换主题"></a>Hexo更换主题</h3><p>(1)下载主题<br><code>git clone --depth 1 git@github.com:iissnan/hexo-theme-next.git themes/next</code><br>注：<code>git@github.com:iissnan/hexo-theme-next.git</code>是主题仓库地址；<code>themes/next</code>表示下载到<code>themes</code>文件夹下的<code>next</code>文件夹。<br>(2)<code>在_config.yml</code>文件中把<code>theme: landscape</code>改为<code>theme: next</code><br>(3)发布更改</p>
-
+          <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/09/hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1455,7 +1084,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="优秀的人">
       <meta itemprop="description" content="日常学习记录">
     </span>
@@ -1483,7 +1112,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 10:28:32" itemprop="dateModified" datetime="2020-08-13T10:28:32+08:00">2020-08-13</time>
+                <time title="修改时间：2020-08-14 14:37:16" itemprop="dateModified" datetime="2020-08-14T14:37:16+08:00">2020-08-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1534,13 +1163,15 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Git的基础配置和命令"><a href="#Git的基础配置和命令" class="headerlink" title="Git的基础配置和命令"></a>Git的基础配置和命令</h2><h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p><code>cat ~/.ssh/id_rsa.pub</code>查看SSH<br><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code>生成SSH。（输入后按3次回车）<br>将得到的SSH复制到GitHub。</p>
-<h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p><strong>在你第一次使用git的时候，git会提示进行全局变量设置：</strong><br><code>git config --global user.name &quot;叶冰&quot;</code>告诉git名字<br><code>git config --global user.email &quot;hhdd576@126.com&quot;</code>告诉git邮箱<br><strong>注：这个配置只需进行一次。</strong>  </p>
-<p><strong>常见的一些Linux命令：</strong><br><code>ls</code>查看当前目录下文件<br><code>ls -a</code>查看当前目录下文件(包括隐藏文件)<br><code>touch 文件</code>在当前目录下创建文件<br><code>mkdir 文件夹</code>在当前目录下创建文件夹<br><code>cd 文件目录</code>进入某个文件夹（直接cd，返回根目录）<br><code>rm -rf 文件</code>删除当前目录下是指定文件（慎用）  </p>
-<h3 id="Git提交（三步）"><a href="#Git提交（三步）" class="headerlink" title="Git提交（三步）"></a>Git提交（三步）</h3><p>(1)git add<br><code>git add -A</code><br>(2)git commit<br><code>git commit -m &quot;本次提交的修改的备注&quot;</code><br><strong>注：没有创建文件提交时可合并(1)(2)为：<code>git commit -m &quot;本次提交的修改的备注&quot;</code>。</strong><br>(3)git push<br>第一次提交到本分支：<code>git push origin master</code><br><strong>注：绑定多个仓库时，origin要替换为相应的仓库名；当在其它分支进行提交时，master要替换为相应分支名</strong>。<br>第2~n次提交到本分支:<code>git push</code><br><strong>注：提交时，需要本地仓库和远程仓库其中一个是另一个的真子集才可以提交，所以提交前要养成先用 <code>git pull</code>抓取远程仓库内容的习惯（多人开发）。</strong>  </p>
-<h3 id="绑定本地仓库到GitHub"><a href="#绑定本地仓库到GitHub" class="headerlink" title="绑定本地仓库到GitHub"></a>绑定本地仓库到GitHub</h3><p>(1)在github创建一个同名空仓库<br>(2)绑定远程仓库<br><code>git init</code>//将文件夹初始化为git仓库<br><code>git remote -v</code>//查看当前的git仓库绑定的远程仓库<br><code>git remote add origin 仓库地址</code>//绑定远程仓库<br><code>git remote remove origin</code>//移除绑定  </p>
-<h3 id="分支-branch-的简单命令"><a href="#分支-branch-的简单命令" class="headerlink" title="分支(branch)的简单命令"></a>分支(branch)的简单命令</h3><p><code>git branch dev</code>创建分支dev<br><code>git checkout dev</code>切换到分支dev<br><strong>注：<code>git checkout -b dev</code>两步合并写法</strong> </p>
-
+          <h2 id="Git的基础配置和命令"><a href="#Git的基础配置和命令" class="headerlink" title="Git的基础配置和命令"></a>Git的基础配置和命令</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/09/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1613,6 +1244,8 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="优秀的人"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">优秀的人</p>
   <div class="site-description" itemprop="description">日常学习记录</div>
 </div>
@@ -1627,17 +1260,31 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
 
+
+
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li></ul>
+        </canvas>
+    </div>
+</div>
 
 
       </div>
@@ -1677,9 +1324,26 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     <span title="站点阅读时长">14 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
 
+    <!-- 网站运行时间的设置 -->
+    <span id="timeDate">载入天数...</span>
+    <span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+    <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("01/05/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()",250);
+    </script>
 
 
 
@@ -1718,7 +1382,10 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
   </div>
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -1727,7 +1394,7 @@ for(int i=0;i&lt;SCHOOLS.size();i++){
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -1790,3 +1457,6 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":70,"height":120},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
+
+    <!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/js/clicklove.js"></script>
