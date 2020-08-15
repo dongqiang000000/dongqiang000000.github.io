@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://style.youkeda.com/img/course/f4/9/1.jpeg">
 <meta property="article:published_time" content="2020-08-14T12:45:31.000Z">
-<meta property="article:modified_time" content="2020-08-14T13:56:33.280Z">
+<meta property="article:modified_time" content="2020-08-15T02:33:42.345Z">
 <meta property="article:author" content="优秀的人">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -217,10 +217,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-08-14 20:45:31 / 修改时间：21:56:33" itemprop="dateCreated datePublished" datetime="2020-08-14T20:45:31+08:00">2020-08-14</time>
+              <time title="创建时间：2020-08-14 20:45:31" itemprop="dateCreated datePublished" datetime="2020-08-14T20:45:31+08:00">2020-08-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-15 10:33:42" itemprop="dateModified" datetime="2020-08-15T10:33:42+08:00">2020-08-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -262,14 +268,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -307,7 +313,34 @@ console.log(subtitle.querySelector(&apos;a&apos;));  </code></pre><h4 id="选择
     ...
  &lt;/article&gt;</code></pre><p><strong><em>注意，数据属性很重要，在前端中广泛应用，大家有兴趣可以用 chrome 开发者工具去试试看看一下其他网站的代码。</em></strong><br>获取数据代码：  </p>
 <pre><code>const article = document.querySelector(&apos;article&apos;);
-console.log(article.dataset);  </code></pre><h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2>
+console.log(article.dataset);  </code></pre><h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="创建标签节点"><a href="#创建标签节点" class="headerlink" title="创建标签节点"></a>创建标签节点</h3><p>1.<code>const div = document.createElement(&#39;div&#39;);//创建div标签</code><br>2.<code>const txt = document.createTextNode(&#39;优课达-学的比别人好一点&#39;);//创建文本</code></p>
+<h3 id="添加新节点"><a href="#添加新节点" class="headerlink" title="添加新节点"></a>添加新节点</h3><p>1.<code>appendChild(newNode)//在所以儿子节点之后添加</code><br>2.<code>inserBefore(newNode,referenceNode)//在某个目标儿子节点之前添加</code>  </p>
+<h3 id="设置样式、属性"><a href="#设置样式、属性" class="headerlink" title="设置样式、属性"></a>设置样式、属性</h3><p>1.<code>img.setAttribute(&#39;style&#39;, &#39;width: 100%; height: 100%;&#39;);//和在HYML中写style语法一样（全换）</code><br>2.<code>dom.style.color = &#39;xxxx&#39;;//单独设置某些属性</code><br><strong>注：setAttribute()还可以设置其他HTML属性，如：id、src等</strong>  </p>
+<h3 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h3><p>1.innerHTML=’’//清空select节点所以后代内容<br>2.innerHTML=’内容’//设置select节点内部代码  </p>
+<h2 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h2><h3 id="DOM绑定事件"><a href="#DOM绑定事件" class="headerlink" title="DOM绑定事件"></a>DOM绑定事件</h3><p>1.<code>dom.onclick=function(){}//只能在该dom节点上绑定一个事件</code><br>2.<code>addEventListener(&#39;click&#39;,function(){})//可以绑定多个事件</code><br><strong><em>注：推荐使用addEventListener()</em></strong></p>
+<h3 id="表单元素事件"><a href="#表单元素事件" class="headerlink" title="表单元素事件"></a>表单元素事件</h3><p>1.focus: 表单组件（Input, Textarea, etc..）获取焦点事件<br>2.blur: 表单组件（Input, Textarea, etc..）失去焦点事件<br>3.input: 只要输入值变化就会触发<br>4.change: 输入框失去焦点才会触发</p>
+<h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><p>1.click: 点击事件<br>2.dblclick: 双击事件<br>3.mousedown: 在元素上按下任意鼠标按钮。<br>4.mouseenter: 指针移到有事件监听的元素内。<br>5.mouseleave: 指针移出元素范围外（不冒泡）。<br>6.mousemove: 指针在元素内移动时持续触发。<br>7.mouseover: 指针移到有事件监听的元素或者它的子元素内。<br>8.mouseout: 指针移出元素，或者移到它的子元素上。<br>9.mouseup: 在元素上释放任意鼠标按键。<br><strong><em>注：移动主要用<code>mouseover</code>和<code>mouseout</code></em></strong>  </p>
+<h3 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h3><p>1.keydown: 键盘按下事件<br>2.keyup: 键盘释放事件  </p>
+<h3 id="视图事件"><a href="#视图事件" class="headerlink" title="视图事件"></a>视图事件</h3><p>1.scroll: 文档滚动事件<br>2.resize: 窗口放缩事件  </p>
+<h3 id="资源事件"><a href="#资源事件" class="headerlink" title="资源事件"></a>资源事件</h3><p>load: 资源加载成功事件  </p>
+<h3 id="事件的冒泡、捕获、委托"><a href="#事件的冒泡、捕获、委托" class="headerlink" title="事件的冒泡、捕获、委托"></a>事件的冒泡、捕获、委托</h3><h4 id="冒泡"><a href="#冒泡" class="headerlink" title="冒泡"></a>冒泡</h4><p>触发孩子事件，使得父亲事件也触发（一直到根节点）<br>例如：父亲和孩子都绑定了点击事件，点击孩子会先触发孩子点击事件，接着就触发父亲点击事件，可能会导致一些问题。所以要阻止冒泡  </p>
+<p><strong>阻止冒泡：e.stopPropagation()</strong>  </p>
+<pre><code>// ......省略
+likeBtn.addEventListener(&apos;click&apos;, function(e) {
+  // 点击事件
+  e.stopPropagation()
+
+// ......省略  </code></pre><h4 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h4><p>捕获和冒泡是完全相反的，冒泡是从当前元素沿着祖先节点往上冒泡，而捕获是从根 HTML 节点开始依次移动到当前元素。<br>如果想在捕获阶段监听事件，我们需要传递第三个参数为true， 代码如下：  </p>
+<pre><code>dom.addEventListener(&apos;click&apos;, function() {}, true);</code></pre><h4 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h4><p>委托其实是冒泡事件的一种应用，这个概念依赖于这样一个事实,如果你想要在大量子元素中单击任何一个都可以运行一段代码，您可以将事件监听器设置在其父节点上，并让子节点上发生的事件冒泡到父节点上，而不是每个子节点单独设置事件监听器。<br>例子：  </p>
+<pre><code>const box = document.querySelector(&apos;.box&apos;);
+
+box.addEventListener(&apos;click&apos;, function(e) {
+  // 注意box区域比img大，如果点击在空白间隔区域，那么返回的节点将不会是IMG，需要特殊处理一下
+  if (e.target.nodeName === &apos;IMG&apos;) {
+    document.body.style.backgroundImage = `url(${e.target.src})`;
+  }
+});</code></pre><p><strong><em>注：target 表示真实响应事件的 DOM 节点</em></strong></p>
+
     </div>
 
     
@@ -412,7 +445,7 @@ console.log(article.dataset);  </code></pre><h2 id="DOM操作"><a href="#DOM操�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM"><span class="nav-number">1.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM映射"><span class="nav-number">1.1.</span> <span class="nav-text">DOM映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM访问"><span class="nav-number">1.2.</span> <span class="nav-text">DOM访问</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器查询：querySelector"><span class="nav-number">1.2.1.</span> <span class="nav-text">选择器查询：querySelector()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器全量查询：querySelectorAll"><span class="nav-number">1.2.2.</span> <span class="nav-text">选择器全量查询：querySelectorAll()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dom属性"><span class="nav-number">1.3.</span> <span class="nav-text">Dom属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类别（元素节点、特性节点、文本节点……）"><span class="nav-number">1.3.1.</span> <span class="nav-text">类别（元素节点、特性节点、文本节点……）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM内容"><span class="nav-number">1.3.2.</span> <span class="nav-text">DOM内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM亲属"><span class="nav-number">1.3.3.</span> <span class="nav-text">DOM亲属</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM样式"><span class="nav-number">1.3.4.</span> <span class="nav-text">DOM样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM数据属性（dataset获取）"><span class="nav-number">1.3.5.</span> <span class="nav-text">DOM数据属性（dataset获取）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM操作"><span class="nav-number">2.</span> <span class="nav-text">DOM操作</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM"><span class="nav-number">1.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM映射"><span class="nav-number">1.1.</span> <span class="nav-text">DOM映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM访问"><span class="nav-number">1.2.</span> <span class="nav-text">DOM访问</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器查询：querySelector"><span class="nav-number">1.2.1.</span> <span class="nav-text">选择器查询：querySelector()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器全量查询：querySelectorAll"><span class="nav-number">1.2.2.</span> <span class="nav-text">选择器全量查询：querySelectorAll()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dom属性"><span class="nav-number">1.3.</span> <span class="nav-text">Dom属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类别（元素节点、特性节点、文本节点……）"><span class="nav-number">1.3.1.</span> <span class="nav-text">类别（元素节点、特性节点、文本节点……）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM内容"><span class="nav-number">1.3.2.</span> <span class="nav-text">DOM内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM亲属"><span class="nav-number">1.3.3.</span> <span class="nav-text">DOM亲属</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM样式"><span class="nav-number">1.3.4.</span> <span class="nav-text">DOM样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM数据属性（dataset获取）"><span class="nav-number">1.3.5.</span> <span class="nav-text">DOM数据属性（dataset获取）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM操作"><span class="nav-number">2.</span> <span class="nav-text">DOM操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建标签节点"><span class="nav-number">2.1.</span> <span class="nav-text">创建标签节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新节点"><span class="nav-number">2.2.</span> <span class="nav-text">添加新节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置样式、属性"><span class="nav-number">2.3.</span> <span class="nav-text">设置样式、属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#innerHTML"><span class="nav-number">2.4.</span> <span class="nav-text">innerHTML</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM事件"><span class="nav-number">3.</span> <span class="nav-text">DOM事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM绑定事件"><span class="nav-number">3.1.</span> <span class="nav-text">DOM绑定事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单元素事件"><span class="nav-number">3.2.</span> <span class="nav-text">表单元素事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标事件"><span class="nav-number">3.3.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键盘事件"><span class="nav-number">3.4.</span> <span class="nav-text">键盘事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视图事件"><span class="nav-number">3.5.</span> <span class="nav-text">视图事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源事件"><span class="nav-number">3.6.</span> <span class="nav-text">资源事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件的冒泡、捕获、委托"><span class="nav-number">3.7.</span> <span class="nav-text">事件的冒泡、捕获、委托</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#冒泡"><span class="nav-number">3.7.1.</span> <span class="nav-text">冒泡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#捕获"><span class="nav-number">3.7.2.</span> <span class="nav-text">捕获</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#委托"><span class="nav-number">3.7.3.</span> <span class="nav-text">委托</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -490,13 +523,13 @@ console.log(article.dataset);  </code></pre><h2 id="DOM操作"><a href="#DOM操�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">24k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">20 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
 </div>
 
     <!-- 网站运行时间的设置 -->
